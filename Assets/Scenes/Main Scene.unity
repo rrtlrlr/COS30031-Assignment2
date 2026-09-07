@@ -352,10 +352,7 @@ GameObject:
   - component: {fileID: 2026599015}
   - component: {fileID: 2026599014}
   - component: {fileID: 2026599013}
-<<<<<<< HEAD:Assets/Scenes/Main Scene.unity
-=======
   - component: {fileID: 2026599016}
->>>>>>> 3d524a0e717aa640168b4a4bd8d4538417b0e0d1:Assets/Scenes/SampleScene.unity
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -510,8 +507,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
-<<<<<<< HEAD:Assets/Scenes/Main Scene.unity
-=======
 --- !u!114 &2026599016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,7 +521,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput2D
   moveSpeed: 6
   moveAction: {fileID: -3346624689539426274, guid: 578840b67578bf84f9546d362b0e6f0b, type: 3}
->>>>>>> 3d524a0e717aa640168b4a4bd8d4538417b0e0d1:Assets/Scenes/SampleScene.unity
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
