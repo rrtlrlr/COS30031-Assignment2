@@ -6,11 +6,12 @@ using UnityEngine.InputSystem;
 public class PlayerInput2D : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 6f;
+
+    // Drag Player/Move from InputSystem_Actions onto this field in the Inspector.
     [SerializeField] private InputActionReference moveAction;
 
     private Rigidbody2D _body;
     private Vector2 _input;
-    private float _speedMultiplier = 1f;
 
     private void Awake() => _body = GetComponent<Rigidbody2D>();
 
@@ -27,11 +28,6 @@ public class PlayerInput2D : MonoBehaviour
     private void FixedUpdate()
     {
         // Move the physics body per physics step.
-        _body.linearVelocity = _input.normalized * moveSpeed * _speedMultiplier;
-    }
-
-    public void SetSpeedMultiplier(float multiplier)
-    {
-        _speedMultiplier = multiplier;
+        _body.linearVelocity = _input.normalized * moveSpeed;
     }
 }
