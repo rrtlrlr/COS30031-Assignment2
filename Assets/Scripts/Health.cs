@@ -13,6 +13,9 @@ public class Health : MonoBehaviour
 
     private int _current;
 
+    public int CurrentHealth => _current;
+    public int MaxHealth => maxHealth;
+
     private void Awake() => _current = maxHealth;
 
     public void TakeDamage(int amount)
