@@ -1855,7 +1855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a36b854eda3ac4a90dd86d2222cd34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput2D
-  moveSpeed: 6
+  moveSpeed: 3
   moveAction: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
 --- !u!114 &2026599017
 MonoBehaviour:
@@ -1922,7 +1922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5294adca59218f46a44dfa02bfbff78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSprint
-  sprintMultiplier: 1.7
+  sprintMultiplier: 1.6
   staminaDrainPerSecond: 50
   staminaRecoveryPerSecond: 15
   sprintAction: {fileID: -7471211009204490832, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
