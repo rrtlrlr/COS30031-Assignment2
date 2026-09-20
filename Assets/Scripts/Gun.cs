@@ -8,6 +8,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private InputActionReference fireAction;
     [SerializeField] private float fireDistance = 0.5f;
     [SerializeField] private InputActionReference reloadAction;
+    [SerializeField] private float fireRate = 0.1f;
 
     private ObjectPool<Bullet> _pool;
     private Ammo _ammo;
@@ -43,6 +44,8 @@ public class Gun : MonoBehaviour
         reloadAction.action.Disable();
     }
 
+    private float _nextFireTime;
+
     private void Update()
     {
         if (reloadAction.action.WasPressedThisFrame())
@@ -50,7 +53,7 @@ public class Gun : MonoBehaviour
             _ammo.Reload();
         }
 
-        if (fireAction.action.WasPressedThisFrame() && _ammo.HasAmmo())
+        if (fireAction.action.IsPressed() && Time.time >= _nextFireTime && _ammo.HasAmmo())
         {
             _ammo.UseAmmo(1);
 
@@ -63,6 +66,8 @@ public class Gun : MonoBehaviour
                 spawnPosition,
                 direction,
                 transform.root.gameObject);
+
+            _nextFireTime = Time.time + fireRate;
         }
     }
 }
