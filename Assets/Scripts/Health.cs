@@ -1,28 +1,41 @@
-// Assets/Scripts/Health.cs - attach to anything that can be damaged.
 using System;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class Health : MonoBehaviour, IDamageable
 {
     [SerializeField] private int maxHealth = 100;
 
-    // Anyone who cares subscribes. This component announces what happened and
-    // never decides what happens next, which is what lets the same file work
-    // unchanged on a player, a crate and a wall.
+    public event Action<int, int> HealthChanged;
     public event Action<GameObject> Died;
 
+    public int Current => _current;
+    public int Maximum => maxHealth;
+
     private int _current;
+    private bool _dead;
 
-    public int CurrentHealth => _current;
-    public int MaxHealth => maxHealth;
+    private void Awake() => Revive();
 
-    private void Awake() => _current = maxHealth;
-
-    public void TakeDamage(int amount)
+    public void Revive()
     {
-        _current = Mathf.Max(0, _current - amount);
+        _current = maxHealth;
+        _dead = false;
+        HealthChanged?.Invoke(_current, maxHealth);
+    }
+
+    public void ApplyDamage(DamageInfo info)
+    {
+        if (_dead || info.Source == gameObject)
+        {
+            return;
+        }
+
+        _current = Mathf.Max(0, _current - info.Amount);
+        HealthChanged?.Invoke(_current, maxHealth);
+
         if (_current == 0)
         {
+            _dead = true;
             Died?.Invoke(gameObject);
         }
     }

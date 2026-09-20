@@ -9,12 +9,12 @@ public class HealthUI : MonoBehaviour
     private void Start()
     {
         healthBar.minValue = 0;
-        healthBar.maxValue = playerHealth.MaxHealth;
-        healthBar.value = playerHealth.CurrentHealth;
+        healthBar.maxValue = playerHealth.Maximum;
+        healthBar.value = playerHealth.Current;
     }
 
     private void Update()
     {
-        healthBar.value = playerHealth.CurrentHealth;
+        healthBar.value = playerHealth.Current;
     }
 }
