@@ -7,6 +7,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private InputActionReference fireAction;
     [SerializeField] private float fireDistance = 0.5f;
+    [SerializeField] private InputActionReference reloadAction;
 
     private ObjectPool<Bullet> _pool;
     private Ammo _ammo;
@@ -33,23 +34,30 @@ public class Gun : MonoBehaviour
     private void OnEnable()
     {
         fireAction.action.Enable();
+        reloadAction.action.Enable();
     }
 
     private void OnDisable()
     {
         fireAction.action.Disable();
+        reloadAction.action.Disable();
     }
 
     private void Update()
     {
+        if (reloadAction.action.WasPressedThisFrame())
+        {
+            _ammo.Reload();
+        }
+
         if (fireAction.action.WasPressedThisFrame() && _ammo.HasAmmo())
         {
             _ammo.UseAmmo(1);
 
+            Bullet bullet = _pool.Get();
+
             Vector2 direction = transform.right;
             Vector2 spawnPosition = (Vector2)transform.root.position + direction * fireDistance;
-
-            Bullet bullet = _pool.Get();
 
             bullet.Launch(
                 spawnPosition,

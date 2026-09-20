@@ -8,6 +8,6 @@ public class AmmoUI : MonoBehaviour
 
     private void Update()
     {
-        ammoText.text = $"Ammo: {ammo.CurrentAmmo}";
+        ammoText.text = $"{ammo.CurrentMagazineAmmo} / {ammo.ReserveAmmo}";
     }
 }
