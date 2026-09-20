@@ -9,6 +9,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private float fireDistance = 0.5f;
     [SerializeField] private InputActionReference reloadAction;
     [SerializeField] private float fireRate = 0.1f;
+    [SerializeField] private float reloadTime = 2f;
 
     private ObjectPool<Bullet> _pool;
     private Ammo _ammo;
@@ -45,15 +46,16 @@ public class Gun : MonoBehaviour
     }
 
     private float _nextFireTime;
+    private bool _isReloading;
 
     private void Update()
     {
-        if (reloadAction.action.WasPressedThisFrame())
+        if (reloadAction.action.WasPressedThisFrame() && !_isReloading)
         {
-            _ammo.Reload();
+            StartReload();
         }
 
-        if (fireAction.action.IsPressed() && Time.time >= _nextFireTime && _ammo.HasAmmo())
+        if (!_isReloading && fireAction.action.IsPressed() && Time.time >= _nextFireTime && _ammo.HasAmmo())
         {
             _ammo.UseAmmo(1);
 
@@ -69,5 +71,22 @@ public class Gun : MonoBehaviour
 
             _nextFireTime = Time.time + fireRate;
         }
+    }
+
+    private void StartReload()
+    {
+        if (_ammo.CurrentMagazineAmmo >= _ammo.MagazineSize || _ammo.ReserveAmmo <= 0)
+        {
+            return;
+        }
+
+        _isReloading = true;
+        Invoke(nameof(FinishReload), reloadTime);
+    }
+
+    private void FinishReload()
+    {
+        _ammo.Reload();
+        _isReloading = false;
     }
 }
