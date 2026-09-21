@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3d72f203d7ec7fe499633e6b26c364be
+guid: 7ee7d44cf2d8a954c883b51a4a3360b0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5099902753071492996
-    second: Road_Turn_0
+      213: -6317922100510075604
+    second: Road_T_Intersection_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Road_Turn_0
+      name: Road_T_Intersection_0
       rect:
         serializedVersion: 2
         x: 0
         y: 103
-        width: 317
+        width: 420
         height: 317
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c70132e67718939b0800000000000000
-      internalID: -5099902753071492996
+      spriteID: c25d188c25b3258a0800000000000000
+      internalID: -6317922100510075604
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Road_Turn_0: -5099902753071492996
+      Road_T_Intersection_0: -6317922100510075604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
