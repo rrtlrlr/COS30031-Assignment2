@@ -1,9 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class NotebookUI : MonoBehaviour
 {
     [SerializeField] private GameObject notebook;
+    [SerializeField] private TMP_InputField noteInput;
     [SerializeField] private InputActionReference openNotebookAction;
 
     private void Start()
@@ -23,7 +25,7 @@ public class NotebookUI : MonoBehaviour
 
     private void Update()
     {
-        if (openNotebookAction.action.WasPressedThisFrame())
+        if (openNotebookAction.action.WasPressedThisFrame() && !noteInput.isFocused)
         {
             ToggleNotebook();
         }
@@ -35,5 +37,19 @@ public class NotebookUI : MonoBehaviour
 
         notebook.SetActive(isOpening);
         Time.timeScale = isOpening ? 0f : 1f;
+    }
+
+    private void OpenNotebook()
+    {
+        notebook.SetActive(true);
+        Time.timeScale = 0f;
+        noteInput.Select();
+        noteInput.ActivateInputField();
+    }
+
+    public void CloseNotebook()
+    {
+        notebook.SetActive(false);
+        Time.timeScale = 1f;
     }
 }
