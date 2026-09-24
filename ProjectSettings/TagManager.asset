@@ -45,10 +45,10 @@ TagManager:
   - name: Background
     uniqueID: 13031779
     locked: 0
-  - name: Ground
+  - name: Foreground
     uniqueID: 2148091103
     locked: 0
-  - name: Player
+  - name: Character
     uniqueID: 1485845531
     locked: 0
   m_RenderingLayers:
