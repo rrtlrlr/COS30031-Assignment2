@@ -2,12 +2,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class OpenMap : MonoBehaviour
+[RequireComponent(typeof(SpriteRenderer))]
+public class DisplayItem : MonoBehaviour
 {
-    public Image mapCanvas;
+    public Image imageCanvas;
     public float fadeSpeed = 1f;
 
+    private SpriteRenderer _spriteRenderer;
     private Coroutine fadeCoroutine;
+
+    private void Awake()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     private void Start()
     {
@@ -17,7 +24,10 @@ public class OpenMap : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
+        {
+            imageCanvas.sprite = _spriteRenderer.sprite;
             StartFade(1f);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -36,7 +46,7 @@ public class OpenMap : MonoBehaviour
 
     private IEnumerator Fade(float targetAlpha)
     {
-        Color color = mapCanvas.color;
+        Color color = imageCanvas.color;
 
         while (!Mathf.Approximately(color.a, targetAlpha))
         {
@@ -46,15 +56,15 @@ public class OpenMap : MonoBehaviour
                 fadeSpeed * Time.deltaTime
             );
 
-            mapCanvas.color = color;
+            imageCanvas.color = color;
             yield return null;
         }
     }
 
     private void SetAlpha(float alpha)
     {
-        Color color = mapCanvas.color;
+        Color color = imageCanvas.color;
         color.a = alpha;
-        mapCanvas.color = color;
+        imageCanvas.color = color;
     }
 }
