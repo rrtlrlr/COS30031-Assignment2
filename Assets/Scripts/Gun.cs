@@ -10,6 +10,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private InputActionReference reloadAction;
     [SerializeField] private float fireRate = 0.1f;
     [SerializeField] private float reloadTime = 2f;
+    [SerializeField] private Animator animator;
 
     private ObjectPool<Bullet> _pool;
     private Ammo _ammo;
@@ -50,6 +51,15 @@ public class Gun : MonoBehaviour
 
     private void Update()
     {
+        bool isShooting = !_isReloading && fireAction.action.IsPressed() && _ammo.HasAmmo();
+
+        animator.SetBool("IsShooting", isShooting);
+
+        if (fireAction.action.WasPressedThisFrame() && !_isReloading && _ammo.HasAmmo())
+        {
+            animator.SetTrigger("Shoot");
+        }
+
         if (reloadAction.action.WasPressedThisFrame() && !_isReloading)
         {
             StartReload();
@@ -61,7 +71,11 @@ public class Gun : MonoBehaviour
 
             Bullet bullet = _pool.Get();
 
-            Vector2 direction = transform.right;
+            Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
+            Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
+            Vector2 direction = mouseWorldPosition - transform.root.position;
+            direction.Normalize();
+
             Vector2 spawnPosition = (Vector2)transform.root.position + direction * fireDistance;
 
             bullet.Launch(
