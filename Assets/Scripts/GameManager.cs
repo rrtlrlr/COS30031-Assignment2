@@ -9,7 +9,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
+    public GameObject navMesh;
     private void Awake()
     {
         // ensure only one GameManager instance
@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        navMesh.SetActive(true); // is disabled by default as it obstructs scene view during developent. Enable it when the scene first loads
     }
     public bool PlayerHasKey { get; set; } = false;
 }
