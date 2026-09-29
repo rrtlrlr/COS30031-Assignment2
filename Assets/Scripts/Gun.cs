@@ -2,17 +2,20 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Pool;
 
-public class Gun : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private InputActionReference fireAction;
-    [SerializeField] private float fireDistance = 0.5f;
     [SerializeField] private InputActionReference reloadAction;
+    [SerializeField] private Animator animator;
+    [SerializeField] private float fireDistance = 0.5f;
     [SerializeField] private float fireRate = 0.1f;
     [SerializeField] private float reloadTime = 2f;
 
     private ObjectPool<Bullet> _pool;
     private Ammo _ammo;
+    private float _nextFireTime;
+    private bool _isReloading;
 
     private void Awake()
     {
@@ -45,14 +48,20 @@ public class Gun : MonoBehaviour
         reloadAction.action.Disable();
     }
 
-    private float _nextFireTime;
-    private bool _isReloading;
-
     private void Update()
     {
         if (reloadAction.action.WasPressedThisFrame() && !_isReloading)
         {
             StartReload();
+        }
+
+        bool isShooting = !_isReloading && fireAction.action.IsPressed() && _ammo.HasAmmo();
+
+        animator.SetBool("IsShooting", isShooting);
+
+        if (fireAction.action.WasPressedThisFrame() && !_isReloading && _ammo.HasAmmo())
+        {
+            animator.SetTrigger("Shoot");
         }
 
         if (!_isReloading && fireAction.action.IsPressed() && Time.time >= _nextFireTime && _ammo.HasAmmo())
@@ -61,7 +70,11 @@ public class Gun : MonoBehaviour
 
             Bullet bullet = _pool.Get();
 
-            Vector2 direction = transform.right;
+            Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
+            Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
+            Vector2 direction = mouseWorldPosition - transform.root.position;
+            direction.Normalize();
+
             Vector2 spawnPosition = (Vector2)transform.root.position + direction * fireDistance;
 
             bullet.Launch(
@@ -81,6 +94,9 @@ public class Gun : MonoBehaviour
         }
 
         _isReloading = true;
+        animator.SetBool("IsShooting", false);
+        animator.SetBool("IsReloading", true);
+
         Invoke(nameof(FinishReload), reloadTime);
     }
 
@@ -88,5 +104,6 @@ public class Gun : MonoBehaviour
     {
         _ammo.Reload();
         _isReloading = false;
+        animator.SetBool("IsReloading", false);
     }
 }
