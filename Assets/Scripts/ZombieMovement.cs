@@ -7,12 +7,12 @@ public class ZombieMovement : MonoBehaviour
     private NavMeshAgent _agent;
     private Transform _player;
 
-    void Start()	
+    void Start()
     {
-		var agent = GetComponent<NavMeshAgent>();
-		agent.updateRotation = false;
-		agent.updateUpAxis = false;
-	}
+        var agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+    }
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();

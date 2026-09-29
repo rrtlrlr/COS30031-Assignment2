@@ -9,6 +9,22 @@ public class ZombieAttack : MonoBehaviour
 
     private Transform _player;
     private float _nextAttackTime;
+    private Health _health;
+
+    private void Awake()
+    {
+        _health = GetComponent<Health>();
+    }
+
+    private void OnEnable()
+    {
+        _health.Died += OnDied;
+    }
+
+    private void OnDisable()
+    {
+        _health.Died -= OnDied;
+    }
 
     private void Start()
     {
@@ -56,5 +72,12 @@ public class ZombieAttack : MonoBehaviour
     private void StopAttackAnimation()
     {
         animator.SetBool("IsAttacking", false);
+    }
+
+    private void OnDied(GameObject deadObject)
+    {
+        CancelInvoke(nameof(StopAttackAnimation));
+        animator.SetBool("IsAttacking", false);
+        enabled = false;
     }
 }
