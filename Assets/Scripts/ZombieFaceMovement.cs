@@ -18,7 +18,7 @@ public class ZombieFaceMovement : MonoBehaviour
         if (movement.sqrMagnitude > 0.0001f)
         {
             float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
-            visual.rotation = Quaternion.Euler(0f, 0f, angle - 90f);
+            visual.rotation = Quaternion.Euler(0f, 0f, angle - 270f);
         }
 
         _lastPosition = transform.position;
