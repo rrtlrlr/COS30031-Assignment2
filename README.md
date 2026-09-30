@@ -1,7 +1,10 @@
 # Dead End
 **Team name:** Rahul_Wed_1630_G02
+
 **Team members:** Mack Fitzpatrick, Vihanga Gunasekara
+
 **Engine:** Unity
+
 **Unit:** COS30031 – Games Programming | Assessment 2
 
 ---
