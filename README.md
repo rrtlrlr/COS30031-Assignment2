@@ -1,22 +1,22 @@
-\# Dead End
+# Dead End
 
 
 
-\*\*Team name:\*\* Rahul\_Wed\_1630\_G02
+**Team name:** Rahul_Wed_1630_G02
 
-\*\*Team members:\*\* Mack Fitzpatrick, Vihanga Gunasekara
+**Team members:** Mack Fitzpatrick, Vihanga Gunasekara
 
-\*\*Engine:\*\* Unity
+**Engine:** Unity
 
-\*\*Unit:\*\* COS30031 – Games Programming | Assessment 2
-
-
-
-\---
+**Unit:** COS30031 – Games Programming | Assessment 2
 
 
 
-\## Game Description
+---
+
+
+
+## Game Description
 
 
 
@@ -28,13 +28,13 @@ They are provided a gun to fend off against the zombies as well as health heal-u
 
 
 
-\## Connection to the Challenge Brief
+## Connection to the Challenge Brief
 
 
 
-\*\*Partner / scenario:\*\* "Vicmap: The Race Against Time" provided by Transport Victoria.
+**Partner / scenario:** "Vicmap: The Race Against Time" provided by Transport Victoria.
 
-\*\*Topic:\*\* We are tasked with creating a 2D game where a fictional emergency arises (1). The player must develop an understanding of important places around the map and FOIs must represent real-world locations (2). Furthermore, they must discern which geospatial information is to be trusted. This may be achieved when information is missing, outdated, incorrectly classified, or misplaced (3). Reliable geospatial information must be used to support decision making regarding the emergency (4).
+**Topic:** We are tasked with creating a 2D game where a fictional emergency arises (1). The player must develop an understanding of important places around the map and FOIs must represent real-world locations (2). Furthermore, they must discern which geospatial information is to be trusted. This may be achieved when information is missing, outdated, incorrectly classified, or misplaced (3). Reliable geospatial information must be used to support decision making regarding the emergency (4).
 
 
 
@@ -44,7 +44,7 @@ Design points 3 is achieved in section 1 where a misleading map is left by the z
 
 
 
-\## Controls
+## Controls
 
 
 
@@ -64,27 +64,27 @@ Design points 3 is achieved in section 1 where a misleading map is left by the z
 
 
 
-\## How to Play
+## How to Play
 
 
 
 The overall gameplay loop and goal is to:
 
-1\. find the information required in each section to move to the next, ultimately fleeing the city.
+1. find the information required in each section to move to the next, ultimately fleeing the city.
 
-2\. be weary of unreliable information and the influx of zombies attempting to stop you in your tracks.
-
-
-
-\## How to Run the Build
+2. be weary of unreliable information and the influx of zombies attempting to stop you in your tracks.
 
 
 
-\*\*Play online:\*\* \[itch.io link]
+## How to Run the Build
 
 
 
-\## Key Programming Systems
+**Play online:** [itch.io link]
+
+
+
+## Key Programming Systems
 
 
 
@@ -92,15 +92,15 @@ At least three reusable systems, briefly described (name the script/class and wh
 
 
 
-1\. \*\*Zombie Spawning System\*\* (`ZombieSpawner.cs`) — Spawns zombies at random points around a radius, reused across the whole map (all sections)
+1. **Zombie Spawning System** (`ZombieSpawner.cs`) — Spawns zombies at random points around a radius, reused across the whole map (all sections)
 
-2\. \*\*Bullets\*\* (`Bullet.cs`) — A single bullet game object that is spawned when the gun is fired and despawned when it hits something. It is reused whenever the player shoots
+2. **Bullets** (`Bullet.cs`) — A single bullet game object that is spawned when the gun is fired and despawned when it hits something. It is reused whenever the player shoots
 
-3\. \*\*Pickups\*\* (`AmmoPickup` and `HealthPickup`) — Individual objects that the user can collect. Vastly scattered across FOIs and structures in the world showing high reusability.
+3. **Pickups** (`AmmoPickup` and `HealthPickup`) — Individual objects that the user can collect. Vastly scattered across FOIs and structures in the world showing high reusability.
 
 
 
-\## Team Contributions
+## Team Contributions
 
 
 
