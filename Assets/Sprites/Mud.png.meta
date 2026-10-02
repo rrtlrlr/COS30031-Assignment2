@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0374328979f2a0347abd15205af452ab
+guid: 13c666f7b4136594dace4d1175d888a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6387141827742192153
-    second: Gradient_0
+      213: -5971745814065712087
+    second: Mud_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gradient_0
+      name: Mud_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2560
-        height: 440
+        width: 1994
+        height: 1694
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7ed236329505c57a0800000000000000
-      internalID: -6387141827742192153
+      spriteID: 924ffaf52d8102da0800000000000000
+      internalID: -5971745814065712087
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Gradient_0: -6387141827742192153
+      Mud_0: -5971745814065712087
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
