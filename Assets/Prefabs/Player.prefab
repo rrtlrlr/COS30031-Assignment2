@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1268918849217312382}
   - component: {fileID: 4417392255272767665}
   - component: {fileID: 6927314338096471820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 2717689237830641643}
   - component: {fileID: 5001968036244219744}
   - component: {fileID: 5944892066990842754}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -316,6 +316,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput2D
   moveSpeed: 3
   moveAction: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  knockbackDecay: 25
+  bounceScale: 1.5
+  slideAccelPerFriction: 100
 --- !u!114 &7866546118455185705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +415,7 @@ GameObject:
   - component: {fileID: 4876594505083995599}
   - component: {fileID: 1825804260515093272}
   - component: {fileID: 9173768132652920501}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
