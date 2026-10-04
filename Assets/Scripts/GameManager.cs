@@ -25,4 +25,5 @@ public class GameManager : MonoBehaviour
         navMesh.SetActive(true); // is disabled by default as it obstructs scene view during developent. Enable it when the scene first loads
     }
     public bool PlayerHasKey { get; set; } = false;
+    public int PlayerDynamiteCount { get; set; } = 0;
 }
