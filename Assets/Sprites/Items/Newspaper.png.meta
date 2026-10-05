@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cb2dcf7352200e2468ff473c6b93b0e0
+guid: c8f8b6d0f4d2c2049948f3fe5e0eeb94
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4003982261762975687
-    second: Dynamite_0
+      213: 2391255840840876710
+    second: Newspaper_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dynamite_0
+      name: Newspaper_0
       rect:
         serializedVersion: 2
-        x: 56
+        x: 0
         y: 0
-        width: 203
-        height: 250
+        width: 1033
+        height: 1369
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93817a0d85ffe68c0800000000000000
-      internalID: -4003982261762975687
+      spriteID: 6a2066094827f2120800000000000000
+      internalID: 2391255840840876710
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Dynamite_0: -4003982261762975687
+      Newspaper_0: 2391255840840876710
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
