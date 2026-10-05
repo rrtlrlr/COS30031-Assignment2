@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8419063661361239286}
   - component: {fileID: 8582754145872976868}
   - component: {fileID: 6628521961800655799}
+  - component: {fileID: 5259135566221309129}
   m_Layer: 0
   m_Name: Collider_Dryer
   m_TagString: Untagged
@@ -138,6 +139,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5259135566221309129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277282552618414538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &356804167757937002
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +166,7 @@ GameObject:
   - component: {fileID: 4904189353751191654}
   - component: {fileID: 5584510591410374264}
   - component: {fileID: 4661086082255003131}
+  - component: {fileID: 7407822419920013660}
   m_Layer: 0
   m_Name: Collider_Wall
   m_TagString: Untagged
@@ -276,6 +294,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7407822419920013660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356804167757937002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &473293418853560183
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,6 +320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7355605617503191456}
   - component: {fileID: 7996057295949777216}
+  - component: {fileID: 5021901060001766894}
   m_Layer: 0
   m_Name: Collider_Toilet_Bowl
   m_TagString: Untagged
@@ -368,6 +403,22 @@ PolygonCollider2D:
       - {x: 2.9199889, y: -2.6986935}
       - {x: 3.0526624, y: -2.227759}
   m_UseDelaunayMesh: 1
+--- !u!114 &5021901060001766894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473293418853560183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &556881927702421353
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +430,7 @@ GameObject:
   - component: {fileID: 7194765471550636691}
   - component: {fileID: 8854812731077179297}
   - component: {fileID: 4035820467969393116}
+  - component: {fileID: 4410784025790425109}
   m_Layer: 0
   m_Name: Collider_Bin
   m_TagString: Untagged
@@ -506,6 +558,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4410784025790425109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556881927702421353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &600339243920656795
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +585,7 @@ GameObject:
   - component: {fileID: 2156016183769085772}
   - component: {fileID: 7339852904283269797}
   - component: {fileID: 5146988678584020888}
+  - component: {fileID: 5289419567398276481}
   m_Layer: 0
   m_Name: Collider_Wall
   m_TagString: Untagged
@@ -644,6 +713,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5289419567398276481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600339243920656795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &945216548588308232
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,6 +740,7 @@ GameObject:
   - component: {fileID: 6659628484881629744}
   - component: {fileID: 6681511103532382058}
   - component: {fileID: 5912963477953361991}
+  - component: {fileID: 6874266303164623072}
   m_Layer: 0
   m_Name: Collider_Wall
   m_TagString: Untagged
@@ -782,6 +868,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6874266303164623072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945216548588308232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1059680944883391638
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,6 +1027,7 @@ GameObject:
   - component: {fileID: 4978196621687093972}
   - component: {fileID: 4216692794236863925}
   - component: {fileID: 3082785048800918780}
+  - component: {fileID: 2197472045034838692}
   m_Layer: 0
   m_Name: Collider_Wall
   m_TagString: Untagged
@@ -1052,6 +1155,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2197472045034838692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661993592661540868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2340953385655090535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,6 +1182,7 @@ GameObject:
   - component: {fileID: 6370537715036791244}
   - component: {fileID: 6423135568006922882}
   - component: {fileID: 1071285497496164653}
+  - component: {fileID: 1480991155588065656}
   m_Layer: 0
   m_Name: Collider_Wall
   m_TagString: Untagged
@@ -1190,6 +1310,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1480991155588065656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2340953385655090535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2397502390009097382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,6 +1336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7103490950179822261}
   - component: {fileID: 1368991738231602462}
+  - component: {fileID: 3098603808619430602}
   m_Layer: 0
   m_Name: Collider_Toilet_Bowl
   m_TagString: Untagged
@@ -1282,6 +1419,22 @@ PolygonCollider2D:
       - {x: 2.9199889, y: -2.6986935}
       - {x: 3.0526624, y: -2.227759}
   m_UseDelaunayMesh: 1
+--- !u!114 &3098603808619430602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2397502390009097382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2443253864278182221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,6 +1537,7 @@ GameObject:
   - component: {fileID: 1826374143230051497}
   - component: {fileID: 392594047546205378}
   - component: {fileID: 1568664482914353364}
+  - component: {fileID: 4867432960183470735}
   m_Layer: 0
   m_Name: Collider_Toilet_Paper
   m_TagString: Untagged
@@ -1511,6 +1665,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4867432960183470735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2566650028015253865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2757941034473469588
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,6 +1692,7 @@ GameObject:
   - component: {fileID: 4473906270955894874}
   - component: {fileID: 2378167174890854352}
   - component: {fileID: 131152242482720525}
+  - component: {fileID: 8808188017640200458}
   m_Layer: 0
   m_Name: Collider_Toilet_Paper
   m_TagString: Untagged
@@ -1649,6 +1820,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8808188017640200458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2757941034473469588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2896345598835198346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,6 +1847,7 @@ GameObject:
   - component: {fileID: 4075230331204837568}
   - component: {fileID: 3052795836727980987}
   - component: {fileID: 5923048970644358542}
+  - component: {fileID: 3424975860218914598}
   m_Layer: 0
   m_Name: Collider_Bin
   m_TagString: Untagged
@@ -1787,6 +1975,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3424975860218914598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2896345598835198346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &3239160028771558045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,6 +2002,7 @@ GameObject:
   - component: {fileID: 3939391638581199758}
   - component: {fileID: 7129342978753446691}
   - component: {fileID: 8681202535878731140}
+  - component: {fileID: 4992782091208370192}
   m_Layer: 0
   m_Name: Collider_Toilet_Top
   m_TagString: Untagged
@@ -1925,6 +2130,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4992782091208370192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3239160028771558045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &3321509216599453324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +2157,7 @@ GameObject:
   - component: {fileID: 4851835438943777792}
   - component: {fileID: 5398074102421255380}
   - component: {fileID: 2938565888138122807}
+  - component: {fileID: 176838901979102629}
   m_Layer: 0
   m_Name: Collider_Toilet_Paper
   m_TagString: Untagged
@@ -2063,6 +2285,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &176838901979102629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3321509216599453324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &3373677910664302501
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,6 +2312,7 @@ GameObject:
   - component: {fileID: 776163441527540941}
   - component: {fileID: 587569464851682966}
   - component: {fileID: 1178206974003044706}
+  - component: {fileID: 5361061161298012454}
   m_Layer: 0
   m_Name: Collider_Wall
   m_TagString: Untagged
@@ -2201,6 +2440,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5361061161298012454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373677910664302501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &3384605131657578048
 GameObject:
   m_ObjectHideFlags: 0
@@ -2212,6 +2467,7 @@ GameObject:
   - component: {fileID: 1136359254491563475}
   - component: {fileID: 5720656651560324416}
   - component: {fileID: 7538160285978320906}
+  - component: {fileID: 2519230291117915669}
   m_Layer: 0
   m_Name: Collider_Wall
   m_TagString: Untagged
@@ -2339,6 +2595,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2519230291117915669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3384605131657578048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &3495916224114525095
 GameObject:
   m_ObjectHideFlags: 0
@@ -2350,6 +2622,7 @@ GameObject:
   - component: {fileID: 343299357156855835}
   - component: {fileID: 7292046535927687306}
   - component: {fileID: 1903800253664413664}
+  - component: {fileID: 5611875853171859337}
   m_Layer: 0
   m_Name: Collider_Sink
   m_TagString: Untagged
@@ -2477,6 +2750,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5611875853171859337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3495916224114525095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &3636520902062158880
 GameObject:
   m_ObjectHideFlags: 0
@@ -2488,6 +2777,7 @@ GameObject:
   - component: {fileID: 2626289072801177218}
   - component: {fileID: 3681685211123828935}
   - component: {fileID: 6341670017627119364}
+  - component: {fileID: 5335844779777769877}
   m_Layer: 0
   m_Name: Collider_Bin
   m_TagString: Untagged
@@ -2615,6 +2905,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5335844779777769877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3636520902062158880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &4011678760359079550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2626,6 +2932,7 @@ GameObject:
   - component: {fileID: 39238034828436537}
   - component: {fileID: 3647793232267412973}
   - component: {fileID: 8374755665357073082}
+  - component: {fileID: 2053462278289797633}
   m_Layer: 0
   m_Name: Collider_Wall
   m_TagString: Untagged
@@ -2753,6 +3060,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2053462278289797633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4011678760359079550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &4351505668743320470
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,6 +3086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8192878002386664301}
   - component: {fileID: 983571222767643921}
+  - component: {fileID: 6117975326436248353}
   m_Layer: 0
   m_Name: Collider_Toilet_Bowl
   m_TagString: Untagged
@@ -2845,6 +3169,22 @@ PolygonCollider2D:
       - {x: 2.9199889, y: -2.6986935}
       - {x: 3.0526624, y: -2.227759}
   m_UseDelaunayMesh: 1
+--- !u!114 &6117975326436248353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4351505668743320470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &4647749222213985925
 GameObject:
   m_ObjectHideFlags: 0
@@ -2856,6 +3196,7 @@ GameObject:
   - component: {fileID: 4722662577019488842}
   - component: {fileID: 5907928210600801363}
   - component: {fileID: 8999313365505387359}
+  - component: {fileID: 3783905939834468777}
   m_Layer: 0
   m_Name: Collider_Toilet_Paper
   m_TagString: Untagged
@@ -2983,6 +3324,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3783905939834468777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647749222213985925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5205495315242540991
 GameObject:
   m_ObjectHideFlags: 0
@@ -2994,6 +3351,7 @@ GameObject:
   - component: {fileID: 3834846780308504490}
   - component: {fileID: 710854791663403017}
   - component: {fileID: 6543791413600090241}
+  - component: {fileID: 6981384438072538160}
   m_Layer: 0
   m_Name: Collider_Sink
   m_TagString: Untagged
@@ -3121,6 +3479,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6981384438072538160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5205495315242540991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5225277525016006920
 GameObject:
   m_ObjectHideFlags: 0
@@ -3132,6 +3506,7 @@ GameObject:
   - component: {fileID: 8554291196203123663}
   - component: {fileID: 7058747048752142637}
   - component: {fileID: 132497149967232186}
+  - component: {fileID: 1151936026800313720}
   m_Layer: 0
   m_Name: Collider_Wall
   m_TagString: Untagged
@@ -3259,6 +3634,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1151936026800313720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5225277525016006920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5483432771512337806
 GameObject:
   m_ObjectHideFlags: 0
@@ -3270,6 +3661,7 @@ GameObject:
   - component: {fileID: 2549085538931481766}
   - component: {fileID: 5047810127609988907}
   - component: {fileID: 3408172825577981891}
+  - component: {fileID: 1179581940722597139}
   m_Layer: 0
   m_Name: Collider_Wall
   m_TagString: Untagged
@@ -3397,6 +3789,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1179581940722597139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5483432771512337806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5683221613691231232
 GameObject:
   m_ObjectHideFlags: 0
@@ -3408,6 +3816,7 @@ GameObject:
   - component: {fileID: 7107068225175505514}
   - component: {fileID: 7256437349267687576}
   - component: {fileID: 4662829846737321836}
+  - component: {fileID: 3238747365325541118}
   m_Layer: 0
   m_Name: Collider_Bin
   m_TagString: Untagged
@@ -3535,6 +3944,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3238747365325541118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5683221613691231232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5938241685148392003
 GameObject:
   m_ObjectHideFlags: 0
@@ -3546,6 +3971,7 @@ GameObject:
   - component: {fileID: 1551307600537105853}
   - component: {fileID: 4027964778266529250}
   - component: {fileID: 6855823202330824164}
+  - component: {fileID: 3407972375214444989}
   m_Layer: 0
   m_Name: Collider_Toilet_Top
   m_TagString: Untagged
@@ -3673,6 +4099,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3407972375214444989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5938241685148392003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6122515361818572104
 GameObject:
   m_ObjectHideFlags: 0
@@ -3683,6 +4125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5859508065513784221}
   - component: {fileID: 808723175435187819}
+  - component: {fileID: 1280057583762971731}
   m_Layer: 0
   m_Name: Collider_Toilet_Bowl
   m_TagString: Untagged
@@ -3765,6 +4208,22 @@ PolygonCollider2D:
       - {x: 2.9199889, y: -2.6986935}
       - {x: 3.0526624, y: -2.227759}
   m_UseDelaunayMesh: 1
+--- !u!114 &1280057583762971731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6122515361818572104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6211972349861367217
 GameObject:
   m_ObjectHideFlags: 0
@@ -3775,6 +4234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8866620031688054851}
   - component: {fileID: 9202869497806964686}
+  - component: {fileID: 4345056946153485211}
   m_Layer: 0
   m_Name: Collider_Toilet_Bowl
   m_TagString: Untagged
@@ -3857,6 +4317,22 @@ PolygonCollider2D:
       - {x: 2.9199889, y: -2.6986935}
       - {x: 3.0526624, y: -2.227759}
   m_UseDelaunayMesh: 1
+--- !u!114 &4345056946153485211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6211972349861367217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &7123481256431476750
 GameObject:
   m_ObjectHideFlags: 0
@@ -3868,6 +4344,7 @@ GameObject:
   - component: {fileID: 7871644255350822123}
   - component: {fileID: 2956971919745188724}
   - component: {fileID: 6313874529675439162}
+  - component: {fileID: 388641092371102487}
   m_Layer: 0
   m_Name: Collider_Toilet_Top
   m_TagString: Untagged
@@ -3995,6 +4472,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &388641092371102487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123481256431476750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &7226355766872750463
 GameObject:
   m_ObjectHideFlags: 0
@@ -4006,6 +4499,7 @@ GameObject:
   - component: {fileID: 4976565583292707099}
   - component: {fileID: 6674026840215679649}
   - component: {fileID: 4588488253862705990}
+  - component: {fileID: 9189224562686001419}
   m_Layer: 0
   m_Name: Collider_Wall
   m_TagString: Untagged
@@ -4133,6 +4627,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &9189224562686001419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7226355766872750463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &7364975967408479995
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,6 +4654,7 @@ GameObject:
   - component: {fileID: 5532210051419556616}
   - component: {fileID: 5980533975620341588}
   - component: {fileID: 1073204080097767091}
+  - component: {fileID: 8203507455725469255}
   m_Layer: 0
   m_Name: Collider_Wall
   m_TagString: Untagged
@@ -4271,6 +4782,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8203507455725469255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7364975967408479995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &7886122385577340759
 GameObject:
   m_ObjectHideFlags: 0
@@ -4282,6 +4809,7 @@ GameObject:
   - component: {fileID: 1461892061956733840}
   - component: {fileID: 6405697124561861252}
   - component: {fileID: 5271497029175690320}
+  - component: {fileID: 6239973605019576520}
   m_Layer: 0
   m_Name: Collider_Toilet_Paper
   m_TagString: Untagged
@@ -4409,6 +4937,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6239973605019576520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886122385577340759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &7934523904399713981
 GameObject:
   m_ObjectHideFlags: 0
@@ -4420,6 +4964,7 @@ GameObject:
   - component: {fileID: 1528137594799332714}
   - component: {fileID: 5750865462869837857}
   - component: {fileID: 8370904551848291060}
+  - component: {fileID: 5399814282801330223}
   m_Layer: 0
   m_Name: Collider_Sink
   m_TagString: Untagged
@@ -4547,6 +5092,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5399814282801330223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7934523904399713981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8035830446046082848
 GameObject:
   m_ObjectHideFlags: 0
@@ -4558,6 +5119,7 @@ GameObject:
   - component: {fileID: 2498259757633304609}
   - component: {fileID: 2713913435145425665}
   - component: {fileID: 1370562276055283345}
+  - component: {fileID: 9004569264412048788}
   m_Layer: 0
   m_Name: Collider_Wall
   m_TagString: Untagged
@@ -4685,6 +5247,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &9004569264412048788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8035830446046082848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8289690513183052185
 GameObject:
   m_ObjectHideFlags: 0
@@ -4696,6 +5274,7 @@ GameObject:
   - component: {fileID: 5718745883649002369}
   - component: {fileID: 6855146316190823013}
   - component: {fileID: 293810109851004412}
+  - component: {fileID: 9086353672220722702}
   m_Layer: 0
   m_Name: Collider_Sink
   m_TagString: Untagged
@@ -4823,6 +5402,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &9086353672220722702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8289690513183052185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8617593273104810690
 GameObject:
   m_ObjectHideFlags: 0
@@ -4834,6 +5429,7 @@ GameObject:
   - component: {fileID: 3329187218735319229}
   - component: {fileID: 3645888237896448970}
   - component: {fileID: 3289330374291722533}
+  - component: {fileID: 4126954858257063569}
   m_Layer: 0
   m_Name: Collider_Wall
   m_TagString: Untagged
@@ -4961,6 +5557,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4126954858257063569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8617593273104810690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8669033687619289924
 GameObject:
   m_ObjectHideFlags: 0
@@ -4972,6 +5584,7 @@ GameObject:
   - component: {fileID: 7972444048759270986}
   - component: {fileID: 5907204216887412968}
   - component: {fileID: 8353157137671887713}
+  - component: {fileID: 2707973122287575300}
   m_Layer: 0
   m_Name: Collider_Toilet_Top
   m_TagString: Untagged
@@ -5099,6 +5712,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2707973122287575300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8669033687619289924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &8763374736908161227
 GameObject:
   m_ObjectHideFlags: 0
@@ -5110,6 +5739,7 @@ GameObject:
   - component: {fileID: 2855852569528194869}
   - component: {fileID: 7349910876511991875}
   - component: {fileID: 1938050949504995204}
+  - component: {fileID: 551521342289443662}
   m_Layer: 0
   m_Name: Collider_Wall
   m_TagString: Untagged
@@ -5237,6 +5867,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &551521342289443662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763374736908161227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &9058814526026449014
 GameObject:
   m_ObjectHideFlags: 0
@@ -5248,6 +5894,7 @@ GameObject:
   - component: {fileID: 1201934183891004203}
   - component: {fileID: 7869592175916397187}
   - component: {fileID: 9077288551451057407}
+  - component: {fileID: 3407774935833029035}
   m_Layer: 0
   m_Name: Collider_Bin
   m_TagString: Untagged
@@ -5375,6 +6022,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3407774935833029035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9058814526026449014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &9190681970977041664
 GameObject:
   m_ObjectHideFlags: 0
@@ -5386,6 +6049,7 @@ GameObject:
   - component: {fileID: 1316921719392660114}
   - component: {fileID: 3507103016629507300}
   - component: {fileID: 2282289915991919115}
+  - component: {fileID: 980759686489634714}
   m_Layer: 0
   m_Name: Collider_Toilet_Top
   m_TagString: Untagged
@@ -5513,3 +6177,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &980759686489634714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9190681970977041664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
