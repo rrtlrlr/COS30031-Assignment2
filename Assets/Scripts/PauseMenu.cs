@@ -1,53 +1,64 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool IsPaused = false;
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private InputActionReference pauseAction;
+    [SerializeField] private string mainMenuSceneName = "MainMenu";
 
-    [Header("UI References")]
-    public GameObject pauseMenuPanel;
-    public GameObject optionsPanel;
+    private bool _isPaused;
 
-    void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (optionsPanel != null && optionsPanel.activeSelf)
-            {
-                optionsPanel.SetActive(false);
-                pauseMenuPanel.SetActive(true);
-                return;
-            }
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+    }
 
-            if (IsPaused)
-                ResumeGame();
+    private void OnEnable()
+    {
+        pauseAction.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        pauseAction.action.Disable();
+    }
+
+    private void Update()
+    {
+        if (pauseAction.action.WasPressedThisFrame())
+        {
+            if (_isPaused)
+            {
+                Resume();
+            }
             else
-                PauseGame();
+            {
+                Pause();
+            }
         }
     }
 
-    public void PauseGame()
+    public void Pause()
     {
-        pauseMenuPanel.SetActive(true);
-        pauseMenuPanel.transform.SetAsLastSibling(); // Force render on top
+        pauseMenu.SetActive(true);
         Time.timeScale = 0f;
-        AudioListener.pause = true;
-        IsPaused = true;
+        Debug.Log("PAUSED - Time Scale: " + Time.timeScale);
+        _isPaused = true;
     }
 
-    public void ResumeGame()
+    public void Resume()
     {
-        pauseMenuPanel.SetActive(false);
+        pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-        AudioListener.pause = false;
-        IsPaused = false;
+        _isPaused = false;
     }
 
-    public void GoToMainMenu()
+    public void MainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(mainMenuSceneName);
     }
-
 }

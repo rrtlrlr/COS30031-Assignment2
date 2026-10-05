@@ -12,6 +12,11 @@ public class AimAtMouse : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0f)
+        {
+            return;
+        }
+
         Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
         Vector3 mouseWorldPosition = _camera.ScreenToWorldPoint(mouseScreenPosition);
         Vector2 direction = mouseWorldPosition - transform.position;

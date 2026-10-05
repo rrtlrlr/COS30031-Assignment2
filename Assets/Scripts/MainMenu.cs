@@ -7,9 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    [SerializeField] private string gameSceneName = "GameScene";
     public void PlayGame()
     {
-        Debug.Log("Game Successfully Loaded");
+        SceneManager.LoadScene(gameSceneName);
     }
 
     public void QuitGame()
