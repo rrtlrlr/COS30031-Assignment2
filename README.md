@@ -41,6 +41,7 @@ The overall gameplay loop and goal is to:
 
 ## How to Run the Build
 **Play online:** https://105923445.itch.io/dead-end
+**Play online:** the project is also zipped into COS30031-Assignment2-main.zip as directed
 
 ## Key Programming Systems
 1. **Zombie Spawning System** (`ZombieSpawner.cs`) — Spawns zombies at random points around a radius, reused across the whole map (all sections)
