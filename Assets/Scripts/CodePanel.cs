@@ -24,6 +24,7 @@ public class CodePanel : MonoBehaviour
 
     public void Submit()
     {
+        Debug.Log("Submit called with input: " + inputField.text);
         if (_currentDoor == null) return;
 
         if (_currentDoor.TryCode(inputField.text))
