@@ -1,5 +1,3 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CheckDynamite : MonoBehaviour
@@ -7,6 +5,7 @@ public class CheckDynamite : MonoBehaviour
     [SerializeField] private int requiredDynamite = 1;
     [SerializeField] private GameObject objectToDestroy;
     [SerializeField] private DisplayPopup popupUI;
+    [SerializeField] private GameObject victoryPanel;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,7 +18,11 @@ public class CheckDynamite : MonoBehaviour
         {
             GameManager.Instance.PlayerDynamiteCount -= requiredDynamite;
             popupUI.ShowPopup("You used " + requiredDynamite + " dynamite!");
+
             Destroy(objectToDestroy);
+
+            victoryPanel.SetActive(true);
+            Time.timeScale = 0f;
         }
         else
         {
