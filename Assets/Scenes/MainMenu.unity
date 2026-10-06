@@ -267,12 +267,28 @@ PrefabInstance:
       value: 126.7626
       objectReference: {fileID: 0}
     - target: {fileID: 2203539711999812322, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203539711999812322, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203539711999812322, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203539711999812322, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 2203539711999812322, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 166
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203539711999812322, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2661290944738817643, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
       propertyPath: m_IsActive
@@ -387,16 +403,44 @@ PrefabInstance:
       value: 126.7626
       objectReference: {fileID: 0}
     - target: {fileID: 8673548302540004564, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673548302540004564, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673548302540004564, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673548302540004564, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -4.9999847
       objectReference: {fileID: 0}
     - target: {fileID: 8673548302540004564, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -159.72527
+      value: -108.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673548302540004564, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9126562825177427165, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
       propertyPath: m_SizeDelta.y
       value: 126.7626
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126562825177427165, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126562825177427165, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126562825177427165, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 9126562825177427165, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -405,6 +449,10 @@ PrefabInstance:
     - target: {fileID: 9126562825177427165, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 3.1373444
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126562825177427165, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9169765130766268227, guid: a4580c6c748c6604aa788f59d5485a4f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
