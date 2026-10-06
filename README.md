@@ -7,6 +7,8 @@
 
 **Unit:** COS30031 – Games Programming | Assessment 2
 
+**Video:** https://www.youtube.com/watch?v=QOAxrZEtrFY
+
 ---
 
 ## Game Description
