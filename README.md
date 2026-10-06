@@ -39,9 +39,18 @@ The overall gameplay loop and goal is to:
 1. find the information required in each section to move to the next, ultimately fleeing the city.
 2. be weary of unreliable information and the influx of zombies attempting to stop you in your tracks.
 
+## Known Bugs
+1. Not a bug but zombie spawners are implemented such that only 10 zombies can coexist across the map and they spawn independent of the players distance to them. This causes zombie sightings to be rare and the the mud zone in the top of section 1 does not properly spawn a herd (the player must wait a bit in the area first)
+2. Restarting after dying can cause the NavMesh to improperly initialise resulting in zombie path finding AI being potentially bugged.
+
 ## How to Run the Build
-**Play online:** https://105923445.itch.io/dead-end
-**Play online:** the project is also zipped into COS30031-Assignment2-main.zip as directed
+**Simply Play online:** https://105923445.itch.io/dead-end
+**The Zip:** the project is also zipped into COS30031-Assignment2-main.zip as directed.
+* When cloning, ensure Unity Editor v6000.3.21f1.
+* Issue the `Git Clone https://github.com/rrtlrlr/COS30031-Assignment2/` command 
+* How to open the project: Unity Hub → Add project from disk → select the folder
+* Start in the MainMenu scene
+* Ctrl+Shift+B to build and run (will launch via WebGL so make sure its instaled. Will open in browser)
 
 ## Key Programming Systems
 1. **Zombie Spawning System** (`ZombieSpawner.cs`) — Spawns zombies at random points around a radius, reused across the whole map (all sections)
