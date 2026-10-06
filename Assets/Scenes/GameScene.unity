@@ -1777,7 +1777,7 @@ PrefabInstance:
     - target: {fileID: 2911629724747269341, guid: 3d756fdba24d36f47b12012b5536278d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1782136269}
     - target: {fileID: 2911629724747269341, guid: 3d756fdba24d36f47b12012b5536278d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Submit
@@ -14510,7 +14510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb33c42035e76a4089464b35a433982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  codePanel: {fileID: 0}
+  codePanel: {fileID: 1782136269}
   itemDisplayImage: {fileID: 1345333947}
 --- !u!61 &2131861842
 BoxCollider2D:
