@@ -1,32 +1,20 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance;
 
-    [SerializeField] private AudioSource buttonAudio;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private AudioSource musicSource;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
-    }
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-    public void PlayButtonAudio(string sceneName)
-    {
-        StartCoroutine(PlayThenLoadScene(sceneName));
-    }
-
-    private IEnumerator PlayThenLoadScene(string SceneName)
-    {
-        buttonAudio.PlayOneShot(buttonAudio.clip);
-        yield return new WaitForSeconds(buttonAudio.clip.length);
-        SceneManager.LoadScene(SceneName);
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 }

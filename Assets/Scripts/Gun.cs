@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float fireDistance = 0.5f;
     [SerializeField] private float fireRate = 0.1f;
     [SerializeField] private float reloadTime = 2f;
+    [SerializeField] private AudioSource audioSource;
 
     private ObjectPool<Bullet> _pool;
     private Ammo _ammo;
@@ -67,6 +68,7 @@ public class Weapon : MonoBehaviour
         if (!_isReloading && fireAction.action.IsPressed() && Time.time >= _nextFireTime && _ammo.HasAmmo())
         {
             _ammo.UseAmmo(1);
+            audioSource.Play();
 
             Bullet bullet = _pool.Get();
 
