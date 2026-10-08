@@ -1,7 +1,9 @@
 # Dead End
 **Team name:** Rahul_Wed_1630_G02
 
-**Team members:** Mack Fitzpatrick, Vihanga Gunasekara
+**Team members:**
+* Vihanga Gunasekara
+* M.F. (student id: 105923445)
 
 **Engine:** Unity
 
