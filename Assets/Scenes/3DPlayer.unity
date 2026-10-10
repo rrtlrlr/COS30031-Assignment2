@@ -443,6 +443,7 @@ GameObject:
   - component: {fileID: 1101068164}
   - component: {fileID: 1101068163}
   - component: {fileID: 1101068170}
+  - component: {fileID: 1101068171}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -615,6 +616,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2f529325fbc4843974c6b3c422d231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseCursorController
+--- !u!114 &1101068171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101068162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb259297e11a0a4abf4c73725fa99c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HeadBob
+  characterController: {fileID: 1101068163}
+  cameraTarget: {fileID: 1381897602}
+  walkFrequency: 1.8
+  sprintFrequency: 2.8
+  walkAmplitude: 0.06
+  sprintAmplitude: 0.12
+  returnSpeed: 8
+  movementThreshold: 0.1
 --- !u!1001 &1171840923
 PrefabInstance:
   m_ObjectHideFlags: 0
