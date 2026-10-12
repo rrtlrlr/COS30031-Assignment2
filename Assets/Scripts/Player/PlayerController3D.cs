@@ -8,6 +8,8 @@ public class PlayerController3D : MonoBehaviour
     [SerializeField] private InputActionReference moveAction;
     [SerializeField] private InputActionReference jumpAction;
     [SerializeField] private InputActionReference sprintAction;
+    [SerializeField] private Stamina stamina;
+    [SerializeField] private float staminaDrainPerSecond = 25f;
 
     [Header("Ground Movement")]
     [SerializeField] private float moveSpeed = 5f;
@@ -29,6 +31,7 @@ public class PlayerController3D : MonoBehaviour
     private CharacterController _controller;
     private Vector3 _horizontalVelocity;
     private float _verticalVelocity;
+    public bool IsSprinting { get; private set; }
 
     private void Awake()
     {
@@ -78,9 +81,21 @@ public class PlayerController3D : MonoBehaviour
 
         bool grounded = _controller.isGrounded;
 
-        float targetSpeed = sprintAction.action.IsPressed()
+        bool sprintRequested = sprintAction.action.IsPressed();
+        bool canSprint = stamina != null && stamina.HasStamina();
+
+        bool isSprinting = sprintRequested && canSprint && input.y > 0.01f;
+
+        IsSprinting = isSprinting;
+
+        float targetSpeed = IsSprinting
             ? sprintSpeed
             : moveSpeed;
+
+        if (IsSprinting)
+        {
+            stamina.Drain(staminaDrainPerSecond * Time.deltaTime);
+        }
 
         if (grounded)
         {
