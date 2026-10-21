@@ -10,6 +10,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform bulletSpawnPoint;
     [SerializeField] private Camera playerCamera;
     [SerializeField] private GameObject shooter;
+    [SerializeField] private Animator gunAnimator;
 
     [Header("Input")]
     [SerializeField] private InputActionReference fireAction;
@@ -26,6 +27,7 @@ public class Gun : MonoBehaviour
 
     private float _nextFireTime;
     private bool _isReloading;
+    private Coroutine _reloadCoroutine;
 
     public bool IsReloading => _isReloading;
 
@@ -53,12 +55,19 @@ public class Gun : MonoBehaviour
         {
             reloadAction.action.Disable();
         }
+
+        if (_reloadCoroutine != null)
+        {
+            StopCoroutine(_reloadCoroutine);
+            _reloadCoroutine = null;
+        }
+
+        _isReloading = false;
     }
 
     private void Update()
     {
-        if (fireAction != null &&
-            fireAction.action.IsPressed())
+        if (fireAction != null && fireAction.action.IsPressed())
         {
             TryShoot();
         }
@@ -82,12 +91,7 @@ public class Gun : MonoBehaviour
             return;
         }
 
-        if (Time.time < _nextFireTime)
-        {
-            return;
-        }
-
-        if (!ammo.HasAmmo())
+        if (Time.time < _nextFireTime || !ammo.HasAmmo())
         {
             return;
         }
@@ -99,8 +103,13 @@ public class Gun : MonoBehaviour
 
         _nextFireTime = Time.time + 1f / Mathf.Max(0.01f, fireRate);
 
+        if (gunAnimator != null)
+        {
+            gunAnimator.SetTrigger("Shoot");
+        }
+
         Vector3 aimPoint = GetAimPoint();
-        Vector3 direction = (aimPoint - bulletSpawnPoint.position).normalized;
+        Vector3 direction = aimPoint - bulletSpawnPoint.position;
 
         if (direction.sqrMagnitude < 0.001f)
         {
@@ -110,7 +119,7 @@ public class Gun : MonoBehaviour
         Bullet bullet = Instantiate(
             bulletPrefab,
             bulletSpawnPoint.position,
-            Quaternion.LookRotation(direction)
+            Quaternion.LookRotation(direction.normalized)
         );
 
         bullet.Initialize(shooter, bulletSpeed);
@@ -152,12 +161,17 @@ public class Gun : MonoBehaviour
             return;
         }
 
-        StartCoroutine(ReloadRoutine());
+        _reloadCoroutine = StartCoroutine(ReloadRoutine());
     }
 
     private IEnumerator ReloadRoutine()
     {
         _isReloading = true;
+
+        if (gunAnimator != null)
+        {
+            gunAnimator.SetTrigger("Reload");
+        }
 
         yield return new WaitForSeconds(reloadDuration);
 
@@ -167,5 +181,6 @@ public class Gun : MonoBehaviour
         }
 
         _isReloading = false;
+        _reloadCoroutine = null;
     }
 }
