@@ -98,7 +98,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3600300731233806579}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7eb4e080b84d6e34795d7e1423ca366a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -211,7 +211,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4919883157830471590}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7eb4e080b84d6e34795d7e1423ca366a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -270,7 +270,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5064331689455367202}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7eb4e080b84d6e34795d7e1423ca366a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -383,7 +383,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6181973145943410816}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7eb4e080b84d6e34795d7e1423ca366a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -496,7 +496,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6224745203170586199}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7eb4e080b84d6e34795d7e1423ca366a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -609,7 +609,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8445542389421653000}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7eb4e080b84d6e34795d7e1423ca366a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -677,6 +677,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table4
       objectReference: {fileID: 0}
+    - target: {fileID: 7494653669765349555, guid: 4a09c0d856e188e439f6552df62f9e19, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 7eb4e080b84d6e34795d7e1423ca366a, type: 2}
     - target: {fileID: 8036922783173470038, guid: 4a09c0d856e188e439f6552df62f9e19, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.942505
@@ -805,6 +809,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2657881602506412832, guid: 1147a536ebc1c4d418ffc4b0220ff03e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 7eb4e080b84d6e34795d7e1423ca366a, type: 2}
     - target: {fileID: 2892393900813446783, guid: 1147a536ebc1c4d418ffc4b0220ff03e, type: 3}
       propertyPath: m_Name
       value: Chair2
@@ -861,6 +869,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table2
       objectReference: {fileID: 0}
+    - target: {fileID: 7691313381609034408, guid: 2a4a7f4204975ac49a2f0310e57265da, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 7eb4e080b84d6e34795d7e1423ca366a, type: 2}
     - target: {fileID: 7869954279056782661, guid: 2a4a7f4204975ac49a2f0310e57265da, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.7174988
@@ -1013,7 +1025,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8723868921394414756}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7eb4e080b84d6e34795d7e1423ca366a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1105,7 +1117,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6659788543986210776}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7eb4e080b84d6e34795d7e1423ca366a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1202,7 +1214,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6716405636850828753}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7eb4e080b84d6e34795d7e1423ca366a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1265,6 +1277,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3961007276801273843, guid: d2b00f35f650b624ebf8db31ffde151c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 7eb4e080b84d6e34795d7e1423ca366a, type: 2}
     - target: {fileID: 4195449330917118624, guid: d2b00f35f650b624ebf8db31ffde151c, type: 3}
       propertyPath: m_Name
       value: Chair1
@@ -1363,7 +1379,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8718365908922452258}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7eb4e080b84d6e34795d7e1423ca366a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1431,6 +1447,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2657881602506412832, guid: 1147a536ebc1c4d418ffc4b0220ff03e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 7eb4e080b84d6e34795d7e1423ca366a, type: 2}
     - target: {fileID: 2892393900813446783, guid: 1147a536ebc1c4d418ffc4b0220ff03e, type: 3}
       propertyPath: m_Name
       value: Chair2 (1)
