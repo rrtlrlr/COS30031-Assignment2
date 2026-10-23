@@ -1,0 +1,51 @@
+{
+  "product": "Dhivehi House 01",
+  "candidateVersion": "rebuild-v04",
+  "status": "local rebuild candidate; marketplace submission state is managed separately",
+  "testedUnityEditor": "6000.3.25f1",
+  "sourceArchive": "Assets/DhivehiHouse01/Source/Dhivehi_House_01_Source_v04.zip",
+  "prefab": "Assets/DhivehiHouse01/Prefabs/Dhivehi_House_01.prefab",
+  "showcaseScene": "Assets/DhivehiHouse01/Demo/Dhivehi_House_01_Showcase.unity",
+  "modelFiles": [
+    "Assets/DhivehiHouse01/Models/Dhivehi_House_01_LOD0_v06.fbx",
+    "Assets/DhivehiHouse01/Models/Dhivehi_House_01_LOD1_v04.fbx",
+    "Assets/DhivehiHouse01/Models/Dhivehi_House_01_LOD2_v04.fbx"
+  ],
+  "textureFiles": [
+    "Assets/DhivehiHouse01/Textures/limestone-footing-basecolor-v01.png",
+    "Assets/DhivehiHouse01/Textures/limestone-footing-normal-v01.png",
+    "Assets/DhivehiHouse01/Textures/roof-blue-basecolor-v01.png",
+    "Assets/DhivehiHouse01/Textures/roof-blue-normal-v01.png",
+    "Assets/DhivehiHouse01/Textures/shutter-teal-basecolor-v01.png",
+    "Assets/DhivehiHouse01/Textures/shutter-teal-normal-v01.png",
+    "Assets/DhivehiHouse01/Textures/stucco-ivory-basecolor-v01.png",
+    "Assets/DhivehiHouse01/Textures/stucco-ivory-normal-v01.png",
+    "Assets/DhivehiHouse01/Textures/timber-walnut-basecolor-v01.png",
+    "Assets/DhivehiHouse01/Textures/timber-walnut-normal-v01.png"
+  ],
+  "sourceArchiveSha256": "421a99a90b01a4dcb8e0222938f0e98edeeaecf8f58930e373b78574a0e1a9e8",
+  "testedMaterialShader": "Built-in Standard",
+  "lodScreenRelativeTransitionHeights": [
+    0.42,
+    0.12,
+    0.025
+  ],
+  "meshCollidersOnLod0Only": true,
+  "prefabBoundsMeters": {
+    "size": [
+      10.5,
+      4.715000152587891,
+      10.00499963760376
+    ],
+    "rootLocalRotationDegrees": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "semanticVersion": "1.1.0",
+  "lightmapUV": "Authored LightmapUV imported as Unity UV2; Unity secondary-UV generation disabled.",
+  "walkControllerInput": "Set Active Input Handling to Input Manager (Old) or Both and retain default axes Horizontal, Vertical, Mouse X, and Mouse Y; new-input-only projects show a setup message and do not run legacy input calls.",
+  "hingeSourceVersusExport": "The Blender source has named parented hinge pivots; exported FBX and Unity prefab door/shutters are static and not poseable.",
+  "entryStairs": "Ground-contact landing and three step blocks rise 0.17 m per tread; adjoining footprints overlap 0.05 m and LOD0 colliders match block bounds."
+}
