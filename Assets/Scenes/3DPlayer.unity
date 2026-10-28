@@ -61814,6 +61814,7 @@ GameObject:
   - component: {fileID: 1739502606}
   - component: {fileID: 1739502605}
   - component: {fileID: 1739502604}
+  - component: {fileID: 1739502607}
   m_Layer: 0
   m_Name: IceMesh
   m_TagString: Untagged
@@ -61915,6 +61916,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739502602}
   m_Mesh: {fileID: -2124705421725058983, guid: 079c2d4d571bdbf4d98d39e287b87aee, type: 3}
+--- !u!114 &1739502607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739502602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e2acc2606b4ec74fa6b1dd8755e4676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SurfaceZone3D
+  Type: 0
+  IceAcceleration: 6
+  IceDeceleration: 1.2
+  MudSpeedMultiplier: 0.5
 --- !u!1 &1740638984
 GameObject:
   m_ObjectHideFlags: 0
@@ -63533,6 +63550,7 @@ GameObject:
   - component: {fileID: 1803688126}
   - component: {fileID: 1803688125}
   - component: {fileID: 1803688124}
+  - component: {fileID: 1803688127}
   m_Layer: 0
   m_Name: MudMesh
   m_TagString: Untagged
@@ -63634,6 +63652,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803688122}
   m_Mesh: {fileID: -2124705421725058983, guid: 1cf1849fc964beb4d9a3586a54dc890c, type: 3}
+--- !u!114 &1803688127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803688122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e2acc2606b4ec74fa6b1dd8755e4676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SurfaceZone3D
+  Type: 1
+  IceAcceleration: 6
+  IceDeceleration: 1.2
+  MudSpeedMultiplier: 0.5
 --- !u!1 &1806077328
 GameObject:
   m_ObjectHideFlags: 0
