@@ -2,37 +2,30 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-[RequireComponent(typeof(SpriteRenderer))]
 public class DisplayItem : MonoBehaviour
 {
     public Image imageCanvas;
+    public Sprite itemSprite;
     public float fadeSpeed = 1f;
-
-    private SpriteRenderer _spriteRenderer;
     private Coroutine fadeCoroutine;
 
-    private void Awake()
-    {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-    }
-
-    private void Start()
+    private void Start() // initially invisible
     {
         SetAlpha(0f);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            imageCanvas.sprite = _spriteRenderer.sprite;
-            StartFade(1f);
+            imageCanvas.sprite = itemSprite;
+            StartFade(1f); // fade to 1 (full opacity) on enter
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.CompareTag("Player"))
+        if (other.CompareTag("Player")) // dissipate to 0 (invisible) on exit
             StartFade(0f);
     }
 
@@ -50,12 +43,7 @@ public class DisplayItem : MonoBehaviour
 
         while (!Mathf.Approximately(color.a, targetAlpha))
         {
-            color.a = Mathf.MoveTowards(
-                color.a,
-                targetAlpha,
-                fadeSpeed * Time.deltaTime
-            );
-
+            color.a = Mathf.MoveTowards(color.a, targetAlpha, fadeSpeed * Time.deltaTime);
             imageCanvas.color = color;
             yield return null;
         }
