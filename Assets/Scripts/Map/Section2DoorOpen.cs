@@ -1,17 +1,36 @@
 using UnityEngine;
+
 public class Section2DoorOpen : MonoBehaviour
 {
-    public DisplayPopup popupUI;
-    void OnTriggerEnter(Collider collision)
+    public CodePanel codePanel;
+    public GameObject itemDisplayImage;
+
+    private void OnTriggerEnter(Collider collision)
     {
-        if (GameManager.Instance.PlayerHasKey && collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            popupUI.ShowPopup("Section 2 unlocked!");
+            codePanel.Open(this);
+            itemDisplayImage.SetActive(false); // disable so it doesn't overlap with the code panel button
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            codePanel.Close();
+            itemDisplayImage.SetActive(true); // re enable
+        }
+    }
+
+    public bool TryCode(string code)
+    {
+        Debug.Log("Trycode called with code: " + code);
+        if (code == "592")
+        {
             transform.parent.gameObject.SetActive(false);
+            return true;
         }
-        else if (collision.gameObject.CompareTag("Player"))
-        {
-            popupUI.ShowPopup("The door is locked. A key is required.");
-        }
+        return false;
     }
 }

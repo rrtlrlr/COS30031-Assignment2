@@ -10,6 +10,8 @@ public class MouseCursorController : MonoBehaviour
 
     private void Update()
     {
+        if (CodePanel.IsOpen) return;
+
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
             LockCursor();
