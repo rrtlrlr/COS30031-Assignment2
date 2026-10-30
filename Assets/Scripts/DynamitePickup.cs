@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class CollectDynamite : MonoBehaviour
+public class DynamitePickup : MonoBehaviour
 {
     public DisplayPopup popupUI;
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("Player"))
         {

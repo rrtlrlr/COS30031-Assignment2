@@ -2,31 +2,20 @@ using UnityEngine;
 
 public class CheckDynamite : MonoBehaviour
 {
-    [SerializeField] private int requiredDynamite = 1;
-    [SerializeField] private GameObject objectToDestroy;
+    [SerializeField] private int requiredDynamite = 3;
     [SerializeField] private DisplayPopup popupUI;
-    [SerializeField] private GameObject victoryPanel;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (!collision.CompareTag("Player"))
-        {
-            return;
-        }
+        if (!collision.CompareTag("Player")) return;
 
         if (GameManager.Instance.PlayerDynamiteCount >= requiredDynamite)
         {
-            GameManager.Instance.PlayerDynamiteCount -= requiredDynamite;
-            popupUI.ShowPopup("You used " + requiredDynamite + " dynamite!");
-
-            Destroy(objectToDestroy);
-
-            victoryPanel.SetActive(true);
-            Time.timeScale = 0f;
+            popupUI.ShowPopup("You escaped the city! Proceed!");
+            transform.parent.gameObject.SetActive(false);
         }
         else
         {
-            popupUI.ShowPopup("Not enough dynamite!");
+            popupUI.ShowPopup($"Not enough dynamite ({GameManager.Instance.PlayerDynamiteCount}/{requiredDynamite})");
         }
     }
 }
