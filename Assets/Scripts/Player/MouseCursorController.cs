@@ -10,7 +10,7 @@ public class MouseCursorController : MonoBehaviour
 
     private void Update()
     {
-        if (CodePanel.IsOpen) return;
+        if (CodePanel.IsOpen || PauseMenu.IsPaused) return;
 
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {

@@ -15,7 +15,6 @@ public class Health : MonoBehaviour, IDamageable
     private bool _dead;
 
     private void Awake() => Revive();
-
     public void Revive()
     {
         _current = maxHealth;
