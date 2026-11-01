@@ -2,11 +2,23 @@
 
 |Source|Creator/Author|How it was used|Licence|Additional|
 |-|-|-|-|-|
-|https://fightswithbears.itch.io/2d-health-and-ammo-pickups|fightswithbears|For health pickup sprites|Creative Commons Zero v1.0 Universal|"Feel free to use for whatever" was stated by the author|
-|https://fightswithbears.itch.io/2d-health-and-ammo-pickups|fightswithbears|For ammo pickup sprites|Creative Commons Zero v1.0 Universal|"Feel free to use for whatever" was stated by the author|
-|https://chatgpt.com|AI-Generated|For top-down player sprite|No explicit license|Prompt: "Player: Create a clean top-down 2D pixel-art sprite sheet of a survivor holding a rifle, with a transparent background and every frame in its own evenly sized square cell. Include idle, walking, running, shooting, reloading, and death animations, with 8 frames per animation. Keep the character facing exactly the same direction in every frame, with the rifle aimed in that direction, consistent proportions, clothing, colors, and art style throughout, and no text, scenery, grid lines, or other objects."|
-|https://chatgpt.com|AI-Generated|For top-down zombie sprite|No explicit license|Prompt: "Zombie: Create a clean top-down 2D pixel-art sprite sheet of a zombie with a transparent background and every frame in its own evenly sized square cell. Include walking, attacking, and death animations, with 10 frames for walking, 9 frames for attacking, and 10 frames for death. Keep the zombie facing exactly the same direction in every frame, with consistent proportions, clothing, colors, and art style throughout, and no text, scenery, grid lines, or other objects."|
-|https://tumas81.itch.io/minerman-adventure|tumas81|For dynamite sprite|Creative Commons Attribution\_NoDerivatives v4.0 International|"You can use this package to create your own games, even commercial games. In both cases the attribution is appreciated." was stated by the author|
 |https://opengameart.org/content/forest-ambience|TinyWorlds|In-game background music|CC0 1.0 Universal||
 |https://opengameart.org/content/horror-game-menu|Eric Matyas|Menu background music|CC BY 3.0||
 |https://f8studios.itch.io/snakes-authentic-gun-sounds|f8studios|Gun Sound Effects|None specified|"All sounds can be used commercially, and credit is not needed (I would appreciate it a lot though!)." was stated by the author.|
+|https://assetstore.unity.com/packages/3d/props/3d-game-asset-table-chair-sets-199726|Eight Corners|Used throughout various FOI and structure interiors|Standard Unity Asset Store EULA||
+|https://assetstore.unity.com/packages/3d/props/furniture/alchemy-lab-props-41758|Mana Station|used within Balwyn Library FOI interior|Standard Unity Asset Store EULA||
+|https://assetstore.unity.com/packages/3d/props/modular-low-poly-letters-and-icons-296956|little dog creations|Used for Balwyn Library FOI sign|Standard Unity Asset Store EULA||
+|https://assetstore.unity.com/packages/3d/props/exterior/urban-building-130318|Game Stuff Studio|Used as the building in the Glenferrie Oval FOI|Standard Unity Asset Store EULA||
+|https://assetstore.unity.com/packages/3d/environments/hf-modular-fence-kit-385482|Husayn Fakher|Used in various FOIs such as Villa Alba and the Train Depot|Standard Unity Asset Store EULA||
+|https://assetstore.unity.com/packages/3d/vehicles/land/street-vehicles-pack-autobus-tram-213421|Vladislav Simakov|Used at the Train Depot FOI for the tram|Standard Unity Asset Store EULA||
+|https://assetstore.unity.com/packages/3d/environments/building-apartment-80004|LowlyPoly|Used as Villa Alba building|Standard Unity Asset Store EULA||
+|https://assetstore.unity.com/packages/3d/props/exterior/water-fountain-round-four-tier-pbr-299380|GVOZDY|Used at the front of the Villa Alba building|Standard Unity Asset Store EULA||
+|https://assetstore.unity.com/packages/3d/vehicles/land/m-lowpoly-cars-83703|MeowingMammoth|Used the ambulance car in the Hartwell Station FOI|Standard Unity Asset Store EULA||
+|https://assetstore.unity.com/packages/3d/props/low-poly-garage-props-pack-399928|Reedlik|Used for the interior for various FOIs such as the inside of the Hartwell Ambulance Station|Standard Unity Asset Store EULA||
+|https://assetstore.unity.com/packages/3d/environments/urban/dhivehi-house-01-192249|Certainity|Used as the house structure|Standard Unity Asset Store EULA||
+|https://assetstore.unity.com/packages/3d/props/tools/simple-low-poly-keys-3digitalis-231162|3Digitalis|Used the Key as a pickup itwm to progress to section two|Standard Unity Asset Store EULA||
+|https://opengameart.org/content/tnt-low-poly|Chill\_vista|Used as the dynamite pickup item to destory the boulders in section three|CC0 1.0 Universal||
+|https://assetstore.unity.com/packages/3d/environments/landscapes/realistic-rock-pack-370706|Domenico Bianco|Used the rocks to form the city escape in section three|Standard Unity Asset Store EULA||
+
+
+
