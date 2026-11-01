@@ -64,6 +64,6 @@ The overall gameplay loop and goal is to:
 ## Team Contributions
 | Team Member | Contribution |
 |---|---|
-| Mack Fitzpatrick | All But 5 Sprites, World Design, Items and Interaction, Section 3 Progression, Section 2 Progression, Section 1 Progression, FOIs, Tilemaps, Deliverables |
+| M.F. (student id: 105923445) | All But 5 Sprites, World Design, Items and Interaction, Section 3 Progression, Section 2 Progression, Section 1 Progression, FOIs, Tilemaps, Deliverables |
 | Vihanga Gunasekara | Zombies, Notepad, Weapon, Health, Section 3 Progression, Dynamite Sprites, Pickup and Player Sprites, Added Music, UI Menus |
 | Ethan Gibbons | Absolutely nothing - has not even made contact with the team at any point |
