@@ -13,7 +13,6 @@ public class Gun : MonoBehaviour
     [SerializeField] private Animator gunAnimator;
 
     [Header("Effects")]
-    [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private CinemachineImpulseSource impulseSource;
     [SerializeField] private LineRenderer tracerPrefab;
 
@@ -37,9 +36,15 @@ public class Gun : MonoBehaviour
     [SerializeField] private float recoilPitch = 2f;
     [SerializeField] private float recoilRecoverySpeed = 12f;
 
+    [Header("Muzzle Flash")]
+    [SerializeField] private GameObject muzzleFlashObject;
+    [SerializeField] private float muzzleFlashDuration = 0.08f;
+
     private float _nextFireTime;
     private bool _isReloading;
+
     private Coroutine _reloadCoroutine;
+    private Coroutine _muzzleFlashCoroutine;
 
     private Vector3 _initialPosition;
     private Quaternion _initialRotation;
@@ -56,6 +61,11 @@ public class Gun : MonoBehaviour
     {
         _initialPosition = transform.localPosition;
         _initialRotation = transform.localRotation;
+
+        if (muzzleFlashObject != null)
+        {
+            muzzleFlashObject.SetActive(false);
+        }
     }
 
     private void OnEnable()
@@ -87,6 +97,17 @@ public class Gun : MonoBehaviour
         {
             StopCoroutine(_reloadCoroutine);
             _reloadCoroutine = null;
+        }
+
+        if (_muzzleFlashCoroutine != null)
+        {
+            StopCoroutine(_muzzleFlashCoroutine);
+            _muzzleFlashCoroutine = null;
+        }
+
+        if (muzzleFlashObject != null)
+        {
+            muzzleFlashObject.SetActive(false);
         }
 
         _isReloading = false;
@@ -188,22 +209,42 @@ public class Gun : MonoBehaviour
             gunAnimator.SetTrigger("Shoot");
         }
 
-        if (muzzleFlash != null)
-        {
-            muzzleFlash.Stop(
-                true,
-                ParticleSystemStopBehavior.StopEmittingAndClear
-            );
-
-            muzzleFlash.Play(true);
-        }
-
         if (impulseSource != null)
         {
             impulseSource.GenerateImpulse();
         }
 
         ApplyRecoil();
+        PlayMuzzleFlash();
+    }
+
+    private void PlayMuzzleFlash()
+    {
+        if (muzzleFlashObject == null)
+        {
+            return;
+        }
+
+        if (_muzzleFlashCoroutine != null)
+        {
+            StopCoroutine(_muzzleFlashCoroutine);
+        }
+
+        muzzleFlashObject.SetActive(true);
+
+        _muzzleFlashCoroutine = StartCoroutine(HideMuzzleFlash());
+    }
+
+    private IEnumerator HideMuzzleFlash()
+    {
+        yield return new WaitForSeconds(muzzleFlashDuration);
+
+        if (muzzleFlashObject != null)
+        {
+            muzzleFlashObject.SetActive(false);
+        }
+
+        _muzzleFlashCoroutine = null;
     }
 
     private void CreateTracer(Vector3 hitPoint)
@@ -305,4 +346,5 @@ public class Gun : MonoBehaviour
         _isReloading = false;
         _reloadCoroutine = null;
     }
+
 }
