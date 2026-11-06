@@ -1,16 +1,21 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Unity.Cinemachine;
 using System.Collections;
 
 public class Gun : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Ammo ammo;
-    [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private Transform bulletSpawnPoint;
     [SerializeField] private Camera playerCamera;
     [SerializeField] private GameObject shooter;
     [SerializeField] private Animator gunAnimator;
+
+    [Header("Effects")]
+    [SerializeField] private ParticleSystem muzzleFlash;
+    [SerializeField] private CinemachineImpulseSource impulseSource;
+    [SerializeField] private LineRenderer tracerPrefab;
 
     [Header("Input")]
     [SerializeField] private InputActionReference fireAction;
@@ -18,18 +23,40 @@ public class Gun : MonoBehaviour
 
     [Header("Shooting")]
     [SerializeField] private float fireRate = 10f;
-    [SerializeField] private float bulletSpeed = 50f;
     [SerializeField] private float maxAimDistance = 100f;
     [SerializeField] private LayerMask aimLayers = ~0;
 
+    [Header("Tracer")]
+    [SerializeField] private float tracerDuration = 0.06f;
+
     [Header("Reloading")]
-    [SerializeField] private float reloadDuration = 2f;
+    [SerializeField] private float reloadDuration = 3.63f;
+
+    [Header("Weapon Recoil")]
+    [SerializeField] private float recoilBack = 0.045f;
+    [SerializeField] private float recoilPitch = 2f;
+    [SerializeField] private float recoilRecoverySpeed = 12f;
 
     private float _nextFireTime;
     private bool _isReloading;
     private Coroutine _reloadCoroutine;
 
+    private Vector3 _initialPosition;
+    private Quaternion _initialRotation;
+
+    private Vector3 _currentRecoilPosition;
+    private Vector3 _targetRecoilPosition;
+
+    private Vector3 _currentRecoilRotation;
+    private Vector3 _targetRecoilRotation;
+
     public bool IsReloading => _isReloading;
+
+    private void Awake()
+    {
+        _initialPosition = transform.localPosition;
+        _initialRotation = transform.localRotation;
+    }
 
     private void OnEnable()
     {
@@ -77,13 +104,14 @@ public class Gun : MonoBehaviour
         {
             TryReload();
         }
+
+        UpdateRecoil();
     }
 
     private void TryShoot()
     {
         if (_isReloading ||
             ammo == null ||
-            bulletPrefab == null ||
             bulletSpawnPoint == null ||
             playerCamera == null ||
             shooter == null)
@@ -103,52 +131,146 @@ public class Gun : MonoBehaviour
 
         _nextFireTime = Time.time + 1f / Mathf.Max(0.01f, fireRate);
 
-        if (gunAnimator != null)
-        {
-            gunAnimator.SetTrigger("Shoot");
-        }
+        PlayShootingEffects();
 
-        Vector3 aimPoint = GetAimPoint();
-        Vector3 direction = aimPoint - bulletSpawnPoint.position;
-
-        if (direction.sqrMagnitude < 0.001f)
-        {
-            direction = playerCamera.transform.forward;
-        }
-
-        Bullet bullet = Instantiate(
-            bulletPrefab,
-            bulletSpawnPoint.position,
-            Quaternion.LookRotation(direction.normalized)
-        );
-
-        bullet.Initialize(shooter, bulletSpeed);
-    }
-
-    private Vector3 GetAimPoint()
-    {
         Ray ray = new Ray(
             playerCamera.transform.position,
             playerCamera.transform.forward
         );
 
-        if (Physics.Raycast(
+        Vector3 hitPoint = ray.GetPoint(maxAimDistance);
+
+        RaycastHit[] hits = Physics.RaycastAll(
             ray,
-            out RaycastHit hit,
             maxAimDistance,
             aimLayers,
-            QueryTriggerInteraction.Ignore))
+            QueryTriggerInteraction.Ignore
+        );
+
+        System.Array.Sort(hits, (a, b) =>
+            a.distance.CompareTo(b.distance));
+
+        foreach (RaycastHit hit in hits)
         {
             if (hit.transform == shooter.transform ||
                 hit.transform.IsChildOf(shooter.transform))
             {
-                return ray.GetPoint(maxAimDistance);
+                continue;
             }
 
-            return hit.point;
+            hitPoint = hit.point;
+
+            IDamageable target =
+                hit.collider.GetComponentInParent<IDamageable>();
+
+            if (target != null)
+            {
+                DamageInfo damageInfo = new DamageInfo(
+                    25,
+                    "Bullet",
+                    shooter,
+                    hit.point
+                );
+
+                target.ApplyDamage(damageInfo);
+            }
+
+            break;
         }
 
-        return ray.GetPoint(maxAimDistance);
+        CreateTracer(hitPoint);
+    }
+
+    private void PlayShootingEffects()
+    {
+        if (gunAnimator != null)
+        {
+            gunAnimator.SetTrigger("Shoot");
+        }
+
+        if (muzzleFlash != null)
+        {
+            muzzleFlash.Stop(
+                true,
+                ParticleSystemStopBehavior.StopEmittingAndClear
+            );
+
+            muzzleFlash.Play(true);
+        }
+
+        if (impulseSource != null)
+        {
+            impulseSource.GenerateImpulse();
+        }
+
+        ApplyRecoil();
+    }
+
+    private void CreateTracer(Vector3 hitPoint)
+    {
+        if (tracerPrefab == null)
+        {
+            return;
+        }
+
+        LineRenderer tracer = Instantiate(tracerPrefab);
+
+        tracer.positionCount = 2;
+        tracer.useWorldSpace = true;
+
+        tracer.SetPosition(0, bulletSpawnPoint.position);
+        tracer.SetPosition(1, hitPoint);
+
+        Destroy(tracer.gameObject, tracerDuration);
+    }
+
+    private void ApplyRecoil()
+    {
+        _targetRecoilPosition += new Vector3(
+            0f,
+            0f,
+            -recoilBack
+        );
+
+        _targetRecoilRotation += new Vector3(
+            -recoilPitch,
+            0f,
+            0f
+        );
+    }
+
+    private void UpdateRecoil()
+    {
+        _targetRecoilPosition = Vector3.Lerp(
+            _targetRecoilPosition,
+            Vector3.zero,
+            recoilRecoverySpeed * Time.deltaTime
+        );
+
+        _targetRecoilRotation = Vector3.Lerp(
+            _targetRecoilRotation,
+            Vector3.zero,
+            recoilRecoverySpeed * Time.deltaTime
+        );
+
+        _currentRecoilPosition = Vector3.Lerp(
+            _currentRecoilPosition,
+            _targetRecoilPosition,
+            recoilRecoverySpeed * Time.deltaTime
+        );
+
+        _currentRecoilRotation = Vector3.Lerp(
+            _currentRecoilRotation,
+            _targetRecoilRotation,
+            recoilRecoverySpeed * Time.deltaTime
+        );
+
+        transform.localPosition =
+            _initialPosition + _currentRecoilPosition;
+
+        transform.localRotation =
+            _initialRotation *
+            Quaternion.Euler(_currentRecoilRotation);
     }
 
     private void TryReload()
