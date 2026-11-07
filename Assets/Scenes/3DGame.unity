@@ -31829,6 +31829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef45f7ad70f98aa4d93e88b7a74780cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CheckDynamite
+  section3Config: {fileID: 11400000, guid: 2738e352af35301439510a13a58f4e74, type: 2}
   requiredDynamite: 3
   popupUI: {fileID: 5547138543942565044}
 --- !u!1 &821731283
@@ -54216,6 +54217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0585fdc0ad64abd45ac70fc6fbfdfe66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CodePanel
+  section2Config: {fileID: 11400000, guid: f505f552b2ade32468ed48387bfae2c3, type: 2}
   panel: {fileID: 5755805265552541875}
   inputField: {fileID: 7588481557911332528}
   popup: {fileID: 5547138543942565044}
@@ -67183,6 +67185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47abeaf52603c584595f254f54b2ce28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Section2DoorOpen
+  section1Config: {fileID: 11400000, guid: 6c1aae856c5bf0f44a93af274349a122, type: 2}
   popupUI: {fileID: 5547138543942565044}
 --- !u!1 &1518819772
 GameObject:
