@@ -137,6 +137,13 @@ public class PickupInteractable : MonoBehaviour, IInteractable
 
     private void CollectObject()
     {
+        ItemOfInterestPickup itemOfInterest = GetComponent<ItemOfInterestPickup>();
+
+        if (itemOfInterest != null && !itemOfInterest.Collect())
+        {
+            return;
+        }
+
         isHeld = false;
 
         if (currentInteractor != null)

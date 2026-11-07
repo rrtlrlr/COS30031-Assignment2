@@ -14,6 +14,11 @@ public class NotebookUI : MonoBehaviour
     [SerializeField] private InputActionReference openNotebookAction;
     [SerializeField] private MouseCursorController mouseCursorController;
 
+    [Header("Notebook Tabs")]
+    [SerializeField] private GameObject notesPanel;
+    [SerializeField] private GameObject itemsPanel;
+    [SerializeField] private TMP_Text titleText;
+
     [Header("Notebook Settings")]
     [SerializeField] private int pageCount = 5;
     [SerializeField] private float animationDuration = 0.4f;
@@ -24,6 +29,7 @@ public class NotebookUI : MonoBehaviour
     private int _currentPage;
     private bool _isOpen;
     private bool _isAnimating;
+    private bool _isOnNotesTab = true;
     private Coroutine _animationCoroutine;
 
     private void Start()
@@ -34,6 +40,7 @@ public class NotebookUI : MonoBehaviour
         notebookHolder.localPosition = hiddenPosition;
         notebook.SetActive(false);
 
+        ShowNotesTab();
         UpdatePage();
     }
 
@@ -60,7 +67,7 @@ public class NotebookUI : MonoBehaviour
             return;
         }
 
-        if (_isOpen && noteInput.isFocused)
+        if (_isOpen && _isOnNotesTab && noteInput != null && noteInput.isFocused)
         {
             if (Keyboard.current != null &&
                 Keyboard.current.escapeKey.wasPressedThisFrame)
@@ -127,7 +134,10 @@ public class NotebookUI : MonoBehaviour
             return;
         }
 
-        SaveCurrentPage();
+        if (_isOnNotesTab)
+        {
+            SaveCurrentPage();
+        }
 
         _animationCoroutine = StartCoroutine(
             AnimateNotebook(visiblePosition, hiddenPosition, false)
@@ -163,10 +173,16 @@ public class NotebookUI : MonoBehaviour
             _isOpen = true;
             Time.timeScale = 0f;
 
-            UpdatePage();
+            if (_isOnNotesTab)
+            {
+                UpdatePage();
 
-            noteInput.Select();
-            noteInput.ActivateInputField();
+                if (noteInput != null)
+                {
+                    noteInput.Select();
+                    noteInput.ActivateInputField();
+                }
+            }
         }
         else
         {
@@ -193,9 +209,61 @@ public class NotebookUI : MonoBehaviour
         _animationCoroutine = null;
     }
 
+    public void ShowNotesTab()
+    {
+        if (notesPanel != null)
+        {
+            notesPanel.SetActive(true);
+        }
+
+        if (itemsPanel != null)
+        {
+            itemsPanel.SetActive(false);
+        }
+
+        if (titleText != null)
+        {
+            titleText.text = "My Notes";
+        }
+
+        _isOnNotesTab = true;
+
+        if (_isOpen && noteInput != null)
+        {
+            UpdatePage();
+            noteInput.Select();
+            noteInput.ActivateInputField();
+        }
+    }
+
+    public void ShowItemsTab()
+    {
+        if (_isOnNotesTab && _isOpen)
+        {
+            SaveCurrentPage();
+        }
+
+        if (notesPanel != null)
+        {
+            notesPanel.SetActive(false);
+        }
+
+        if (itemsPanel != null)
+        {
+            itemsPanel.SetActive(true);
+        }
+
+        if (titleText != null)
+        {
+            titleText.text = "Items of Interest";
+        }
+
+        _isOnNotesTab = false;
+    }
+
     public void NextPage()
     {
-        if (!_isOpen)
+        if (!_isOpen || !_isOnNotesTab)
         {
             return;
         }
@@ -211,7 +279,7 @@ public class NotebookUI : MonoBehaviour
 
     public void PreviousPage()
     {
-        if (!_isOpen)
+        if (!_isOpen || !_isOnNotesTab)
         {
             return;
         }
@@ -227,12 +295,27 @@ public class NotebookUI : MonoBehaviour
 
     private void SaveCurrentPage()
     {
-        _pages[_currentPage] = noteInput.text;
+        if (noteInput != null && _pages != null)
+        {
+            _pages[_currentPage] = noteInput.text;
+        }
     }
 
     private void UpdatePage()
     {
-        noteInput.text = _pages[_currentPage];
-        pageNumber.text = $"Page {_currentPage + 1} / {pageCount}";
+        if (_pages == null)
+        {
+            return;
+        }
+
+        if (noteInput != null)
+        {
+            noteInput.text = _pages[_currentPage];
+        }
+
+        if (pageNumber != null)
+        {
+            pageNumber.text = $"Page {_currentPage + 1} / {pageCount}";
+        }
     }
 }
