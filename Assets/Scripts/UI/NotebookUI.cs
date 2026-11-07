@@ -1,62 +1,205 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class NotebookUI : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private GameObject notebook;
+    [SerializeField] private Transform notebookHolder;
+    [SerializeField] private GameObject weaponHolder;
     [SerializeField] private TMP_InputField noteInput;
     [SerializeField] private TMP_Text pageNumber;
     [SerializeField] private InputActionReference openNotebookAction;
+    [SerializeField] private MouseCursorController mouseCursorController;
+
+    [Header("Notebook Settings")]
     [SerializeField] private int pageCount = 5;
+    [SerializeField] private float animationDuration = 0.4f;
+    [SerializeField] private Vector3 hiddenPosition = new Vector3(0f, -1.5f, 0.7f);
+    [SerializeField] private Vector3 visiblePosition = new Vector3(0f, -0.35f, 0.7f);
 
     private string[] _pages;
     private int _currentPage;
+    private bool _isOpen;
+    private bool _isAnimating;
+    private Coroutine _animationCoroutine;
 
     private void Start()
     {
         _pages = new string[pageCount];
         _currentPage = 0;
+
+        notebookHolder.localPosition = hiddenPosition;
         notebook.SetActive(false);
+
         UpdatePage();
     }
 
     private void OnEnable()
     {
-        openNotebookAction.action.Enable();
+        if (openNotebookAction != null)
+        {
+            openNotebookAction.action.Enable();
+        }
     }
 
     private void OnDisable()
     {
-        openNotebookAction.action.Disable();
+        if (openNotebookAction != null)
+        {
+            openNotebookAction.action.Disable();
+        }
     }
 
     private void Update()
     {
-        if (openNotebookAction.action.WasPressedThisFrame() && !notebook.activeSelf)
+        if (_isAnimating || openNotebookAction == null)
         {
-            OpenNotebook();
+            return;
+        }
+
+        if (_isOpen && noteInput.isFocused)
+        {
+            if (Keyboard.current != null &&
+                Keyboard.current.escapeKey.wasPressedThisFrame)
+            {
+                CloseNotebook();
+            }
+
+            return;
+        }
+
+        if (openNotebookAction.action.WasPressedThisFrame())
+        {
+            if (_isOpen)
+            {
+                CloseNotebook();
+            }
+            else
+            {
+                OpenNotebook();
+            }
+
+            return;
+        }
+
+        if (_isOpen &&
+            Keyboard.current != null &&
+            Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            CloseNotebook();
         }
     }
 
     private void OpenNotebook()
     {
+        if (_isOpen || _isAnimating)
+        {
+            return;
+        }
+
+        if (mouseCursorController != null)
+        {
+            mouseCursorController.enabled = false;
+        }
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         notebook.SetActive(true);
-        Time.timeScale = 0f;
-        UpdatePage();
-        noteInput.Select();
-        noteInput.ActivateInputField();
+
+        if (weaponHolder != null)
+        {
+            weaponHolder.SetActive(false);
+        }
+
+        _animationCoroutine = StartCoroutine(
+            AnimateNotebook(hiddenPosition, visiblePosition, true)
+        );
     }
 
     public void CloseNotebook()
     {
+        if (!_isOpen || _isAnimating)
+        {
+            return;
+        }
+
         SaveCurrentPage();
-        notebook.SetActive(false);
-        Time.timeScale = 1f;
+
+        _animationCoroutine = StartCoroutine(
+            AnimateNotebook(visiblePosition, hiddenPosition, false)
+        );
+    }
+
+    private IEnumerator AnimateNotebook(Vector3 start, Vector3 end, bool opening)
+    {
+        _isAnimating = true;
+
+        float elapsed = 0f;
+
+        while (elapsed < animationDuration)
+        {
+            elapsed += Time.unscaledDeltaTime;
+
+            float progress = Mathf.Clamp01(elapsed / animationDuration);
+            float smoothProgress = Mathf.SmoothStep(0f, 1f, progress);
+
+            notebookHolder.localPosition = Vector3.Lerp(
+                start,
+                end,
+                smoothProgress
+            );
+
+            yield return null;
+        }
+
+        notebookHolder.localPosition = end;
+
+        if (opening)
+        {
+            _isOpen = true;
+            Time.timeScale = 0f;
+
+            UpdatePage();
+
+            noteInput.Select();
+            noteInput.ActivateInputField();
+        }
+        else
+        {
+            _isOpen = false;
+            notebook.SetActive(false);
+
+            if (weaponHolder != null)
+            {
+                weaponHolder.SetActive(true);
+            }
+
+            Time.timeScale = 1f;
+
+            if (mouseCursorController != null)
+            {
+                mouseCursorController.enabled = true;
+            }
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
+        _isAnimating = false;
+        _animationCoroutine = null;
     }
 
     public void NextPage()
     {
+        if (!_isOpen)
+        {
+            return;
+        }
+
         SaveCurrentPage();
 
         if (_currentPage < pageCount - 1)
@@ -68,6 +211,11 @@ public class NotebookUI : MonoBehaviour
 
     public void PreviousPage()
     {
+        if (!_isOpen)
+        {
+            return;
+        }
+
         SaveCurrentPage();
 
         if (_currentPage > 0)
