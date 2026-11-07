@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class NotebookItemsUI : MonoBehaviour
 {
@@ -12,20 +13,40 @@ public class NotebookItemsUI : MonoBehaviour
 
     [Header("Item Preview")]
     [SerializeField] private Image itemImage;
+    [SerializeField] private Button itemImageButton;
     [SerializeField] private TMP_Text itemTitle;
     [SerializeField] private TMP_Text itemDescription;
     [SerializeField] private TMP_Text itemContent;
+
+    [Header("Image Zoom")]
+    [SerializeField] private GameObject imageZoomOverlay;
+    [SerializeField] private Image zoomImage;
+    [SerializeField] private Button zoomCloseButton;
+    [SerializeField] private Vector2 maximumZoomSize = new Vector2(1100f, 750f);
 
     private readonly List<Button> itemButtons = new List<Button>();
 
     private ItemOfInterestData.Category? selectedCategory;
     private ItemOfInterestData selectedItem;
 
+    private void Awake()
+    {
+        if (itemImageButton == null && itemImage != null)
+        {
+            itemImageButton = itemImage.GetComponent<Button>();
+
+            if (itemImageButton == null)
+            {
+                itemImageButton = itemImage.GetComponentInParent<Button>();
+            }
+        }
+    }
+
     private void OnEnable()
     {
         if (NotebookCollection.Instance != null)
         {
-            NotebookCollection.Instance.ItemCollected += OnItemCollected;
+            NotebookCollection.Instance.ItemCollected += HandleItemCollected;
         }
 
         if (categoryDropdown != null)
@@ -33,21 +54,65 @@ public class NotebookItemsUI : MonoBehaviour
             categoryDropdown.onValueChanged.AddListener(OnCategoryChanged);
         }
 
+        if (itemImageButton != null)
+        {
+            itemImageButton.onClick.AddListener(OpenImageZoom);
+        }
+        else
+        {
+            Debug.LogError("Item Image Button reference is missing.");
+        }
+
+        if (zoomCloseButton != null)
+        {
+            zoomCloseButton.onClick.AddListener(CloseImageZoom);
+        }
+
         SetupDropdown();
         RefreshItemList();
         ClearPreview();
+
+        if (imageZoomOverlay != null)
+        {
+            imageZoomOverlay.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("Image Zoom Overlay reference is missing.");
+        }
     }
 
     private void OnDisable()
     {
         if (NotebookCollection.Instance != null)
         {
-            NotebookCollection.Instance.ItemCollected -= OnItemCollected;
+            NotebookCollection.Instance.ItemCollected -= HandleItemCollected;
         }
 
         if (categoryDropdown != null)
         {
             categoryDropdown.onValueChanged.RemoveListener(OnCategoryChanged);
+        }
+
+        if (itemImageButton != null)
+        {
+            itemImageButton.onClick.RemoveListener(OpenImageZoom);
+        }
+
+        if (zoomCloseButton != null)
+        {
+            zoomCloseButton.onClick.RemoveListener(CloseImageZoom);
+        }
+    }
+
+    private void Update()
+    {
+        if (imageZoomOverlay != null &&
+            imageZoomOverlay.activeSelf &&
+            Keyboard.current != null &&
+            Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            CloseImageZoom();
         }
     }
 
@@ -93,7 +158,7 @@ public class NotebookItemsUI : MonoBehaviour
         ClearPreview();
     }
 
-    private void OnItemCollected(ItemOfInterestData item)
+    private void HandleItemCollected(ItemOfInterestData item)
     {
         RefreshItemList();
     }
@@ -102,7 +167,7 @@ public class NotebookItemsUI : MonoBehaviour
     {
         ClearItemButtons();
 
-        if (NotebookCollection.Instance == null)
+        if (NotebookCollection.Instance == null || itemListContent == null)
         {
             return;
         }
@@ -122,6 +187,12 @@ public class NotebookItemsUI : MonoBehaviour
 
     private void CreateItemButton(ItemOfInterestData item)
     {
+        if (itemButtonPrefab == null)
+        {
+            Debug.LogError("Item Button Prefab is missing.");
+            return;
+        }
+
         Button button = Instantiate(itemButtonPrefab, itemListContent);
 
         TMP_Text buttonText = button.GetComponentInChildren<TMP_Text>();
@@ -143,7 +214,13 @@ public class NotebookItemsUI : MonoBehaviour
         if (itemImage != null)
         {
             itemImage.sprite = item.ItemImage;
+            itemImage.preserveAspect = true;
             itemImage.enabled = item.ItemImage != null;
+        }
+
+        if (itemImageButton != null)
+        {
+            itemImageButton.interactable = item.ItemImage != null;
         }
 
         if (itemTitle != null)
@@ -160,6 +237,64 @@ public class NotebookItemsUI : MonoBehaviour
         {
             itemContent.text = item.ItemContent;
         }
+
+        CloseImageZoom();
+    }
+
+    private void OpenImageZoom()
+    {
+        Debug.Log("Image zoom button clicked.");
+
+        if (selectedItem == null)
+        {
+            Debug.LogWarning("No item is currently selected.");
+            return;
+        }
+
+        if (selectedItem.ItemImage == null)
+        {
+            Debug.LogWarning("The selected item has no image assigned.");
+            return;
+        }
+
+        if (imageZoomOverlay == null || zoomImage == null)
+        {
+            Debug.LogError("Image Zoom Overlay or Zoom Image reference is missing.");
+            return;
+        }
+
+        zoomImage.sprite = selectedItem.ItemImage;
+        zoomImage.preserveAspect = true;
+        zoomImage.enabled = true;
+
+        Rect spriteRect = selectedItem.ItemImage.rect;
+
+        float scale = Mathf.Min(
+            maximumZoomSize.x / spriteRect.width,
+            maximumZoomSize.y / spriteRect.height,
+            1f
+        );
+
+        RectTransform zoomRect = zoomImage.GetComponent<RectTransform>();
+
+        zoomRect.sizeDelta = new Vector2(
+            spriteRect.width * scale,
+            spriteRect.height * scale
+        );
+
+        zoomRect.anchoredPosition = Vector2.zero;
+
+        imageZoomOverlay.SetActive(true);
+
+        Debug.Log("Image zoom overlay enabled.");
+    }
+
+    public void CloseImageZoom()
+    {
+        if (imageZoomOverlay != null)
+        {
+            imageZoomOverlay.SetActive(false);
+        }
     }
 
     private void ClearPreview()
@@ -170,6 +305,11 @@ public class NotebookItemsUI : MonoBehaviour
         {
             itemImage.sprite = null;
             itemImage.enabled = false;
+        }
+
+        if (itemImageButton != null)
+        {
+            itemImageButton.interactable = false;
         }
 
         if (itemTitle != null)
@@ -186,6 +326,8 @@ public class NotebookItemsUI : MonoBehaviour
         {
             itemContent.text = "";
         }
+
+        CloseImageZoom();
     }
 
     private void ClearItemButtons()
