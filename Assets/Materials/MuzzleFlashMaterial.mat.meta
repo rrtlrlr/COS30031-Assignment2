@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Materials/Default.physicMaterial.meta
+guid: 7eb4e080b84d6e34795d7e1423ca366a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 13400000
+========
+guid: 870ba48670370ee459be458f62879366
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+>>>>>>>> 3d-items:Assets/Materials/MuzzleFlashMaterial.mat.meta
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

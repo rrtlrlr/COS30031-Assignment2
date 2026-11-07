@@ -5,9 +5,9 @@ public readonly struct DamageInfo
     public readonly int Amount;
     public readonly string Type;
     public readonly GameObject Source;
-    public readonly Vector2 Point;
+    public readonly Vector3 Point;
 
-    public DamageInfo(int amount, string type, GameObject source, Vector2 point)
+    public DamageInfo(int amount, string type, GameObject source, Vector3 point)
     {
         Amount = amount;
         Type = type;

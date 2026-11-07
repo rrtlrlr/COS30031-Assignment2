@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05246f851a39ef04cb6170296180f4b1, type: 3}
+  m_Name: Newspaper_001
+  m_EditorClassIdentifier: Assembly-CSharp::ItemOfInterestData
+  itemID: newspaper_001
+  itemTitle: The Daily Herald
+  category: 1
+  itemImage: {fileID: 2391255840840876710, guid: c8f8b6d0f4d2c2049948f3fe5e0eeb94, type: 3}
+  itemDescription: Newspaper found inside and abandoned house
+  itemContent: 

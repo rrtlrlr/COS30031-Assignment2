@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Resources/Multistory Dungeons 2 bookshelves/Scenes/Overview_01.unity.meta
 guid: dcf480a6b9bc1d448b275ebaa63ca789
 DefaultImporter:
+========
+guid: ae54c5abcde30c541b6a7d40cb0ec76e
+PrefabImporter:
+>>>>>>>> 3d-items:Assets/Prefabs/BulletTracer.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

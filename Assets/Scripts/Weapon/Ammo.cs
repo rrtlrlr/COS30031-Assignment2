@@ -11,9 +11,14 @@ public class Ammo : MonoBehaviour
     public int CurrentMagazineAmmo => _currentMagazineAmmo;
     public int ReserveAmmo => _reserveAmmo;
     public int MagazineSize => magazineSize;
+    public bool IsMagazineFull => _currentMagazineAmmo >= magazineSize;
+    public bool HasReserveAmmo => _reserveAmmo > 0;
 
     private void Awake()
     {
+        magazineSize = Mathf.Max(1, magazineSize);
+        startingReserveAmmo = Mathf.Max(0, startingReserveAmmo);
+
         _currentMagazineAmmo = magazineSize;
         _reserveAmmo = startingReserveAmmo;
     }
@@ -23,16 +28,22 @@ public class Ammo : MonoBehaviour
         return _currentMagazineAmmo > 0;
     }
 
-    public void UseAmmo(int amount)
+    public bool UseAmmo(int amount = 1)
     {
-        _currentMagazineAmmo = Mathf.Max(0, _currentMagazineAmmo - amount);
+        if (amount <= 0 || _currentMagazineAmmo < amount)
+        {
+            return false;
+        }
+
+        _currentMagazineAmmo -= amount;
+        return true;
     }
 
-    public void Reload()
+    public bool Reload()
     {
-        if (_currentMagazineAmmo >= magazineSize || _reserveAmmo <= 0)
+        if (IsMagazineFull || !HasReserveAmmo)
         {
-            return;
+            return false;
         }
 
         int needed = magazineSize - _currentMagazineAmmo;
@@ -40,10 +51,17 @@ public class Ammo : MonoBehaviour
 
         _currentMagazineAmmo += amountToReload;
         _reserveAmmo -= amountToReload;
+
+        return amountToReload > 0;
     }
 
     public void AddReserveAmmo(int amount)
     {
+        if (amount <= 0)
+        {
+            return;
+        }
+
         _reserveAmmo += amount;
     }
 }
