@@ -68,6 +68,11 @@ public class NotebookItemsUI : MonoBehaviour
             zoomCloseButton.onClick.AddListener(CloseImageZoom);
         }
 
+        if (NotebookCollection.Instance != null)
+        {
+            NotebookCollection.Instance.DynamiteCountChanged += UpdateDynamiteCount;
+        }
+
         SetupDropdown();
         RefreshItemList();
         ClearPreview();
@@ -102,6 +107,11 @@ public class NotebookItemsUI : MonoBehaviour
         if (zoomCloseButton != null)
         {
             zoomCloseButton.onClick.RemoveListener(CloseImageZoom);
+        }
+
+        if (NotebookCollection.Instance != null)
+        {
+            NotebookCollection.Instance.DynamiteCountChanged -= UpdateDynamiteCount;
         }
     }
 
@@ -225,7 +235,14 @@ public class NotebookItemsUI : MonoBehaviour
 
         if (itemTitle != null)
         {
-            itemTitle.text = item.ItemTitle;
+            if (item.ItemCategory == ItemOfInterestData.Category.Dynamite)
+            {
+                itemTitle.text = item.ItemTitle + " x" + NotebookCollection.Instance.DynamiteCount;
+            }
+            else
+            {
+                itemTitle.text = item.ItemTitle;
+            }
         }
 
         if (itemDescription != null)
@@ -341,5 +358,15 @@ public class NotebookItemsUI : MonoBehaviour
         }
 
         itemButtons.Clear();
+    }
+
+    private void UpdateDynamiteCount(int count)
+    {
+        if (selectedItem != null &&
+            selectedItem.ItemCategory == ItemOfInterestData.Category.Dynamite &&
+            itemTitle != null)
+        {
+            itemTitle.text = selectedItem.ItemTitle + " x" + count;
+        }
     }
 }

@@ -138,8 +138,14 @@ public class PickupInteractable : MonoBehaviour, IInteractable
     private void CollectObject()
     {
         ItemOfInterestPickup itemOfInterest = GetComponent<ItemOfInterestPickup>();
+        DynamitePickup dynamitePickup = GetComponent<DynamitePickup>();
 
         if (itemOfInterest != null && !itemOfInterest.Collect())
+        {
+            return;
+        }
+
+        if (dynamitePickup != null && !dynamitePickup.Collect())
         {
             return;
         }

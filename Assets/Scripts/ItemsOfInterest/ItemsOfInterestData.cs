@@ -11,6 +11,7 @@ public class ItemOfInterestData : ScriptableObject
         Letter,
         Code,
         Photograph,
+        Dynamite,
         Other
     }
 

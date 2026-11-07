@@ -46,15 +46,27 @@ public class CollectionNotificationUI : MonoBehaviour
             return;
         }
 
+        ShowMessage(
+            "ITEM DISCOVERED",
+            item.ItemTitle + " has been added to your notebook."
+        );
+    }
+
+    public void ShowMessage(string title, string message)
+    {
+        if (notificationPanel == null)
+        {
+            return;
+        }
+
         if (notificationTitle != null)
         {
-            notificationTitle.text = "ITEM DISCOVERED";
+            notificationTitle.text = title;
         }
 
         if (notificationMessage != null)
         {
-            notificationMessage.text =
-                item.ItemTitle + " has been added to your notebook.";
+            notificationMessage.text = message;
         }
 
         notificationPanel.SetActive(true);
