@@ -19,6 +19,4 @@
 |https://assetstore.unity.com/packages/3d/props/tools/simple-low-poly-keys-3digitalis-231162|3Digitalis|Used the Key as a pickup itwm to progress to section two|Standard Unity Asset Store EULA||
 |https://opengameart.org/content/tnt-low-poly|Chill\_vista|Used as the dynamite pickup item to destory the boulders in section three|CC0 1.0 Universal||
 |https://assetstore.unity.com/packages/3d/environments/landscapes/realistic-rock-pack-370706|Domenico Bianco|Used the rocks to form the city escape in section three|Standard Unity Asset Store EULA||
-
-
-
+|https://assetstore.unity.com/packages/3d/vegetation/trees/polygon-trees-224068|Alebrijes Studio|Scattered around the map|Standard Unity Asset Store EULA||
