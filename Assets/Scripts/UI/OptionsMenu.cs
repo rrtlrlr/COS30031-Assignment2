@@ -7,6 +7,7 @@ public class OptionsMenu : MonoBehaviour
 {
     [Header("UI References")]
     public Slider volumeSlider;
+    public Slider sensitivitySlider;
     public Toggle fullscreenToggle;
     public TMP_Dropdown resolutionDropdown; // Or use Dropdown if not using TMP
 
@@ -14,19 +15,26 @@ public class OptionsMenu : MonoBehaviour
 
     void Start()
     {
-        // --- Volume ---
+        // volume
         float savedVolume = PlayerPrefs.GetFloat("Volume", 1f);
         volumeSlider.value = savedVolume;
         AudioListener.volume = savedVolume;
         volumeSlider.onValueChanged.AddListener(SetVolume);
 
-        // --- Fullscreen ---
+        // sensitivity (multiplier applied to the camera by LookSensitivity)
+        if (sensitivitySlider != null)
+        {
+            sensitivitySlider.value = PlayerPrefs.GetFloat(LookSensitivity.PrefKey, 1f);
+            sensitivitySlider.onValueChanged.AddListener(SetSensitivity);
+        }
+
+        // Fullscreen
         bool savedFullscreen = PlayerPrefs.GetInt("Fullscreen", 1) == 1;
         fullscreenToggle.isOn = savedFullscreen;
         Screen.fullScreen = savedFullscreen;
         fullscreenToggle.onValueChanged.AddListener(SetFullscreen);
 
-        // --- Resolution ---
+        // Resolution
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
 
@@ -55,6 +63,14 @@ public class OptionsMenu : MonoBehaviour
     {
         AudioListener.volume = volume;
         PlayerPrefs.SetFloat("Volume", volume);
+    }
+
+    public void SetSensitivity(float value)
+    {
+        PlayerPrefs.SetFloat(LookSensitivity.PrefKey, value);
+
+        // Only exists in the game scene; updates the camera live when opened from the pause menu
+        if (LookSensitivity.Instance != null) LookSensitivity.Instance.Apply(value);
     }
 
     public void SetFullscreen(bool isFullscreen)

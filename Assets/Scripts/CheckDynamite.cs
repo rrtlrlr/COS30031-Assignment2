@@ -13,7 +13,7 @@ public class CheckDynamite : MonoBehaviour
         {
             GameManager.Instance.EndSection3();
             float time = GameManager.Instance.Section3Time;
-            popupUI.ShowPopup($"You escaped the city! Proceed! {section3Config.GetStarMessage(time)}");
+            popupUI.ShowPopup($"Proceed to Escape! Took {time:F2}s. {section3Config.GetStarMessage(time)}");
             transform.parent.gameObject.SetActive(false);
         }
         else

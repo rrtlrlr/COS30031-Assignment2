@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Section1Config
   m_EditorClassIdentifier: Assembly-CSharp::SectionScore
   levelName: Section 1
-  bestTime: 60
+  bestTime: 105
   starThresholds:
   - 20
   - 40
