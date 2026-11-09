@@ -32,10 +32,14 @@ public class NotebookUI : MonoBehaviour
     private bool _isOnNotesTab = true;
     private Coroutine _animationCoroutine;
 
+    public static bool IsNotebookOpen { get; private set; }
+
     private void Start()
     {
         _pages = new string[pageCount];
         _currentPage = 0;
+
+        IsNotebookOpen = false;
 
         notebookHolder.localPosition = hiddenPosition;
         notebook.SetActive(false);
@@ -62,7 +66,7 @@ public class NotebookUI : MonoBehaviour
 
     private void Update()
     {
-        if (_isAnimating || openNotebookAction == null)
+        if (PauseMenu.IsPaused || _isAnimating || openNotebookAction == null)
         {
             return;
         }
@@ -102,10 +106,12 @@ public class NotebookUI : MonoBehaviour
 
     private void OpenNotebook()
     {
-        if (_isOpen || _isAnimating)
+        if (_isOpen || _isAnimating || PauseMenu.IsPaused)
         {
             return;
         }
+
+        IsNotebookOpen = true;
 
         if (mouseCursorController != null)
         {
@@ -187,6 +193,8 @@ public class NotebookUI : MonoBehaviour
         else
         {
             _isOpen = false;
+            IsNotebookOpen = false;
+
             notebook.SetActive(false);
 
             if (weaponHolder != null)
