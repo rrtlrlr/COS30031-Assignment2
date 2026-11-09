@@ -229,9 +229,10 @@ MonoBehaviour:
   player: {fileID: 1101068168}
   agent: {fileID: 3215399}
   playerHealth: {fileID: 1101068172}
+  animator: {fileID: 2078870948}
   detectionRange: 15
   attackRange: 1.5
-  movementSpeed: 2.5
+  movementSpeed: 3
   attackDamage: 15
   attackCooldown: 1.5
 --- !u!114 &3215402
@@ -11545,6 +11546,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 3215400}
     m_Modifications:
     - target: {fileID: 578376449398627443, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 578376449398627443, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 578376449398627443, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 578376449398627443, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -11596,6 +11609,11 @@ PrefabInstance:
 --- !u!4 &2078870947 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 578376449398627443, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+  m_PrefabInstance: {fileID: 2078870946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2078870948 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7389507112651452681, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
   m_PrefabInstance: {fileID: 2078870946}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2084878204

@@ -7,6 +7,7 @@ public class ZombieAI : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Health playerHealth;
+    [SerializeField] private Animator animator;
 
     [Header("Detection")]
     [SerializeField] private float detectionRange = 15f;
@@ -21,6 +22,11 @@ public class ZombieAI : MonoBehaviour
 
     private float nextAttackTime;
     private bool isDead;
+    private bool isAttacking;
+
+    private static readonly int SpeedHash = Animator.StringToHash("Speed");
+    private static readonly int AttackHash = Animator.StringToHash("IsAttacking");
+    private static readonly int DeadHash = Animator.StringToHash("IsDead");
 
     private void Awake()
     {
@@ -28,51 +34,84 @@ public class ZombieAI : MonoBehaviour
         {
             agent = GetComponent<NavMeshAgent>();
         }
+
+        if (animator == null)
+        {
+            animator = GetComponentInChildren<Animator>();
+        }
     }
 
     private void Start()
     {
-        agent.speed = movementSpeed;
+        if (agent != null)
+        {
+            agent.speed = movementSpeed;
+        }
     }
 
     private void Update()
     {
-        if (isDead || player == null || agent == null)
+        if (isDead || agent == null || !agent.enabled)
         {
+            return;
+        }
+
+        if (player == null)
+        {
+            UpdateAnimation();
             return;
         }
 
         if (playerHealth != null && playerHealth.Current <= 0)
         {
-            agent.isStopped = true;
-            agent.ResetPath();
+            StopMovement();
+            UpdateAnimation();
             return;
         }
 
         float distance = Vector3.Distance(transform.position, player.position);
 
-        if (distance <= detectionRange)
+        if (distance <= attackRange)
         {
-            if (distance <= attackRange)
-            {
-                AttackPlayer();
-            }
-            else
-            {
-                ChasePlayer();
-            }
+            AttackPlayer();
+        }
+        else if (distance <= detectionRange)
+        {
+            ChasePlayer();
         }
         else
         {
-            agent.isStopped = true;
-            agent.ResetPath();
+            StopMovement();
         }
+
+        UpdateAnimation();
     }
 
     private void ChasePlayer()
     {
+        isAttacking = false;
+
         agent.isStopped = false;
+        agent.speed = movementSpeed;
         agent.SetDestination(player.position);
+
+        if (animator != null)
+        {
+            animator.SetBool(AttackHash, false);
+        }
+    }
+
+    private void StopMovement()
+    {
+        isAttacking = false;
+
+        agent.isStopped = true;
+        agent.ResetPath();
+
+        if (animator != null)
+        {
+            animator.SetBool(AttackHash, false);
+        }
     }
 
     private void AttackPlayer()
@@ -96,13 +135,42 @@ public class ZombieAI : MonoBehaviour
         {
             nextAttackTime = Time.time + attackCooldown;
 
+            isAttacking = true;
+
+            if (animator != null)
+            {
+                animator.SetBool(AttackHash, true);
+            }
+
             if (playerHealth != null)
             {
                 playerHealth.ApplyDamage(
-                    new DamageInfo(attackDamage, "Zombie", gameObject, player.position)
+                    new DamageInfo(
+                        attackDamage,
+                        "Zombie",
+                        gameObject,
+                        player.position
+                    )
                 );
             }
         }
+    }
+
+    private void UpdateAnimation()
+    {
+        if (animator == null)
+        {
+            return;
+        }
+
+        float speed = 0f;
+
+        if (agent != null && agent.enabled && !agent.isStopped)
+        {
+            speed = agent.velocity.magnitude;
+        }
+
+        animator.SetFloat(SpeedHash, speed);
     }
 
     public void Die()
@@ -113,12 +181,20 @@ public class ZombieAI : MonoBehaviour
         }
 
         isDead = true;
+        isAttacking = false;
 
-        if (agent != null)
+        if (agent != null && agent.enabled)
         {
             agent.isStopped = true;
             agent.ResetPath();
             agent.enabled = false;
+        }
+
+        if (animator != null)
+        {
+            animator.SetBool(AttackHash, false);
+            animator.SetFloat(SpeedHash, 0f);
+            animator.SetBool(DeadHash, true);
         }
     }
 }
