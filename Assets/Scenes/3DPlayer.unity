@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 3215397}
   - component: {fileID: 3215401}
   - component: {fileID: 3215402}
+  - component: {fileID: 3215403}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -230,9 +231,9 @@ MonoBehaviour:
   agent: {fileID: 3215399}
   playerHealth: {fileID: 1101068172}
   animator: {fileID: 2078870948}
-  detectionRange: 15
+  detectionRange: 50
   attackRange: 1.5
-  movementSpeed: 3
+  movementSpeed: 6
   attackDamage: 15
   attackCooldown: 1.5
 --- !u!114 &3215402
@@ -249,6 +250,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ZombieHealth
   health: {fileID: 3215397}
   zombieAI: {fileID: 3215401}
+  zombieCollider: {fileID: 0}
+  zombieDeath: {fileID: 0}
+--- !u!114 &3215403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3215396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1efd6a3f6df5b4a981a36737eda739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZombieDeath
+  zombieRenderers: []
+  delayBeforeFade: 2.5
+  fadeDuration: 2
 --- !u!1 &4404543
 GameObject:
   m_ObjectHideFlags: 0
