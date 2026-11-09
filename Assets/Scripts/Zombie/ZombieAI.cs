@@ -12,6 +12,7 @@ public class ZombieAI : MonoBehaviour
     [Header("Detection")]
     [SerializeField] private float detectionRange = 15f;
     [SerializeField] private float attackRange = 1.5f;
+    [SerializeField] private float detectionInterval = 0.25f;
 
     [Header("Movement")]
     [SerializeField] private float movementSpeed = 3.5f;
@@ -21,8 +22,8 @@ public class ZombieAI : MonoBehaviour
     [SerializeField] private float attackCooldown = 1.5f;
 
     private float nextAttackTime;
+    private float nextDetectionTime;
     private bool isDead;
-    private bool isAttacking;
 
     private void Awake()
     {
@@ -57,6 +58,13 @@ public class ZombieAI : MonoBehaviour
             return;
         }
 
+        UpdateAnimation();
+
+        if (Time.time < nextDetectionTime)
+            return;
+
+        nextDetectionTime = Time.time + detectionInterval;
+
         float distance = Vector3.Distance(transform.position, player.position);
 
         if (distance <= attackRange)
@@ -71,13 +79,10 @@ public class ZombieAI : MonoBehaviour
         {
             StopMovement();
         }
-
-        UpdateAnimation();
     }
 
     private void ChasePlayer()
     {
-        isAttacking = false;
         agent.isStopped = false;
         agent.SetDestination(player.position);
 
@@ -87,7 +92,6 @@ public class ZombieAI : MonoBehaviour
 
     private void StopMovement()
     {
-        isAttacking = false;
         agent.isStopped = true;
         agent.ResetPath();
 
@@ -115,7 +119,6 @@ public class ZombieAI : MonoBehaviour
         if (Time.time >= nextAttackTime)
         {
             nextAttackTime = Time.time + attackCooldown;
-            isAttacking = true;
 
             if (animator != null)
                 animator.SetBool("IsAttacking", true);
