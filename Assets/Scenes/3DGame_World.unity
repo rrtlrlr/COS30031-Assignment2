@@ -7561,6 +7561,7 @@ GameObject:
   - component: {fileID: 184002514}
   - component: {fileID: 184002513}
   - component: {fileID: 184002512}
+  - component: {fileID: 184002515}
   m_Layer: 0
   m_Name: SectionWall
   m_TagString: Untagged
@@ -7661,6 +7662,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184002510}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &184002515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184002510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &188101735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13824,6 +13841,7 @@ GameObject:
   - component: {fileID: 360156197}
   - component: {fileID: 360156196}
   - component: {fileID: 360156195}
+  - component: {fileID: 360156198}
   m_Layer: 0
   m_Name: CityWall
   m_TagString: Untagged
@@ -13924,6 +13942,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 360156193}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &360156198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360156193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &360299172
 GameObject:
   m_ObjectHideFlags: 0
@@ -14990,6 +15024,7 @@ GameObject:
   - component: {fileID: 378800951}
   - component: {fileID: 378800950}
   - component: {fileID: 378800949}
+  - component: {fileID: 378800952}
   m_Layer: 0
   m_Name: SectionWall
   m_TagString: Untagged
@@ -15090,6 +15125,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378800947}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &378800952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378800947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &379147337
 GameObject:
   m_ObjectHideFlags: 0
@@ -16548,6 +16599,7 @@ GameObject:
   - component: {fileID: 411084986}
   - component: {fileID: 411084985}
   - component: {fileID: 411084984}
+  - component: {fileID: 411084987}
   m_Layer: 0
   m_Name: CityWall
   m_TagString: Untagged
@@ -16648,6 +16700,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411084982}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &411084987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411084982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &413255621
 GameObject:
   m_ObjectHideFlags: 0
@@ -16795,6 +16863,7 @@ GameObject:
   - component: {fileID: 419823332}
   - component: {fileID: 419823331}
   - component: {fileID: 419823330}
+  - component: {fileID: 419823333}
   m_Layer: 0
   m_Name: CityWall
   m_TagString: Untagged
@@ -16895,6 +16964,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419823328}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &419823333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419823328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &421858288
 GameObject:
   m_ObjectHideFlags: 0
@@ -22830,6 +22915,7 @@ GameObject:
   - component: {fileID: 590582421}
   - component: {fileID: 590582420}
   - component: {fileID: 590582419}
+  - component: {fileID: 590582422}
   m_Layer: 0
   m_Name: CityWall
   m_TagString: Untagged
@@ -22930,6 +23016,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590582417}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &590582422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590582417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &591149432
 GameObject:
   m_ObjectHideFlags: 0
@@ -24548,6 +24650,7 @@ GameObject:
   - component: {fileID: 644033428}
   - component: {fileID: 644033427}
   - component: {fileID: 644033426}
+  - component: {fileID: 644033429}
   m_Layer: 0
   m_Name: SectionWall
   m_TagString: Untagged
@@ -24648,6 +24751,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644033424}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &644033429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644033424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!4 &644976334 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3488493056115668801, guid: 582765940edc961478532872f06a0a27, type: 3}
@@ -24923,7 +25042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1337837788799297066, guid: ed937bac7ba47a94b9eafb672167cd1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.26
+      value: 4.26
       objectReference: {fileID: 0}
     - target: {fileID: 1337837788799297066, guid: ed937bac7ba47a94b9eafb672167cd1b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -25874,6 +25993,7 @@ GameObject:
   - component: {fileID: 689212894}
   - component: {fileID: 689212893}
   - component: {fileID: 689212892}
+  - component: {fileID: 689212895}
   m_Layer: 0
   m_Name: SectionWall
   m_TagString: Untagged
@@ -25974,6 +26094,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689212890}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &689212895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689212890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &690403838
 GameObject:
   m_ObjectHideFlags: 0
@@ -29811,6 +29947,7 @@ GameObject:
   - component: {fileID: 779875293}
   - component: {fileID: 779875292}
   - component: {fileID: 779875291}
+  - component: {fileID: 779875294}
   m_Layer: 0
   m_Name: CityWall
   m_TagString: Untagged
@@ -29911,6 +30048,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779875289}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &779875294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779875289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &783974160
 GameObject:
   m_ObjectHideFlags: 0
@@ -37683,6 +37836,30 @@ PrefabInstance:
       propertyPath: zombiePrefab
       value: 
       objectReference: {fileID: 2051194935583303997, guid: 60441c9af3702874b94c5a407f72740d, type: 3}
+    - target: {fileID: 4935896138475241460, guid: da4c0ff54ebfe6f4a8a6ae5ff4e43c23, type: 3}
+      propertyPath: maximumAliveZombies
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935896138475241460, guid: da4c0ff54ebfe6f4a8a6ae5ff4e43c23, type: 3}
+      propertyPath: navMeshSearchRadius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935896138475241460, guid: da4c0ff54ebfe6f4a8a6ae5ff4e43c23, type: 3}
+      propertyPath: maximumSpawnDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935896138475241460, guid: da4c0ff54ebfe6f4a8a6ae5ff4e43c23, type: 3}
+      propertyPath: maximumSpawnInterval
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935896138475241460, guid: da4c0ff54ebfe6f4a8a6ae5ff4e43c23, type: 3}
+      propertyPath: minimumSpawnDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935896138475241460, guid: da4c0ff54ebfe6f4a8a6ae5ff4e43c23, type: 3}
+      propertyPath: minimumSpawnInterval
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4937868142230626417, guid: da4c0ff54ebfe6f4a8a6ae5ff4e43c23, type: 3}
       propertyPath: m_Name
       value: ZombieSpawner
@@ -48215,6 +48392,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7158877808031982422, guid: e78d2456945ae7142bfd66147b75bc24, type: 3}
   m_PrefabInstance: {fileID: 313818804}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1187073793
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 668470409318601347, guid: d80719a4b0c77d149892ac7e58864e3a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 668470409318601347, guid: d80719a4b0c77d149892ac7e58864e3a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 668470409318601347, guid: d80719a4b0c77d149892ac7e58864e3a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 668470409318601347, guid: d80719a4b0c77d149892ac7e58864e3a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 668470409318601347, guid: d80719a4b0c77d149892ac7e58864e3a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 668470409318601347, guid: d80719a4b0c77d149892ac7e58864e3a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 668470409318601347, guid: d80719a4b0c77d149892ac7e58864e3a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 668470409318601347, guid: d80719a4b0c77d149892ac7e58864e3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 668470409318601347, guid: d80719a4b0c77d149892ac7e58864e3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 668470409318601347, guid: d80719a4b0c77d149892ac7e58864e3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201405239084607623, guid: d80719a4b0c77d149892ac7e58864e3a, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 66705550910fc884882d2708c036c2e9, type: 2}
+    - target: {fileID: 1654374796213218732, guid: d80719a4b0c77d149892ac7e58864e3a, type: 3}
+      propertyPath: m_Name
+      value: Navigation
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d80719a4b0c77d149892ac7e58864e3a, type: 3}
 --- !u!1 &1187153650
 GameObject:
   m_ObjectHideFlags: 0
@@ -52770,6 +53008,7 @@ GameObject:
   - component: {fileID: 1306505171}
   - component: {fileID: 1306505170}
   - component: {fileID: 1306505169}
+  - component: {fileID: 1306505172}
   m_Layer: 0
   m_Name: SectionWall
   m_TagString: Untagged
@@ -52870,6 +53109,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306505167}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1306505172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306505167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1309557865
 GameObject:
   m_ObjectHideFlags: 0
@@ -60225,6 +60480,7 @@ GameObject:
   - component: {fileID: 1378306073}
   - component: {fileID: 1378306072}
   - component: {fileID: 1378306071}
+  - component: {fileID: 1378306074}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -60325,6 +60581,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378306069}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1378306074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378306069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!4 &1379165451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8745204411990222936, guid: ed937bac7ba47a94b9eafb672167cd1b, type: 3}
@@ -62890,6 +63162,10 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 757534210}
+    - target: {fileID: 7688395327364414022, guid: be1cfcd79a899524b8fa51a0c14aaf3d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -87787,6 +88063,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1547166336}
   - {fileID: 1875068547}
+  - {fileID: 1187073793}
   - {fileID: 1810628544}
   - {fileID: 676449295}
   - {fileID: 1451857016}
