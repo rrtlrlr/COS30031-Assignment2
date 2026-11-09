@@ -48,7 +48,7 @@ The overall gameplay loop and goal is to:
 No known bugs at this time
 
 ## How to Run the Build
-**Simply Play online:** insert itchio link
+**Simply Play online:** https://105923445.itch.io/dead-end-3d
 **The Zip:** the project is also zipped into COS30031-Assignment2-3d.zip as directed.
 * When cloning, ensure Unity Editor v6000.3.21f1.
 * Issue the `Git Clone https://github.com/rrtlrlr/COS30031-Assignment2/ -b 3d` command 
