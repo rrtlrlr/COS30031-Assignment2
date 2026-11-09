@@ -690,7 +690,7 @@ MonoBehaviour:
   animator: {fileID: 2306718411913411122}
   detectionRange: 50
   attackRange: 1.5
-  movementSpeed: 6
+  movementSpeed: 5
   attackDamage: 15
   attackCooldown: 1.5
 --- !u!114 &4885237377523702685
