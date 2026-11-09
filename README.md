@@ -1,3 +1,5 @@
+Note that the 3d branch of the COS30031-Assignment2 repository has been used for Assignment 3 development.
+
 # Dead End
 **Team name:** Rahul_Wed_1630_G02
 
@@ -33,6 +35,7 @@ Design points 3 is achieved in section 1 where a misleading map is left by the z
 | Jump | Space |
 | Shoot | Click |
 | Reload | R |
+| Pickup | E |
 | Sprint | Shift |
 | Pause | ESC |
 
@@ -42,7 +45,7 @@ The overall gameplay loop and goal is to:
 2. be weary of unreliable information and the influx of zombies attempting to stop you in your tracks.
 
 ## Known Bugs
-populate once known
+No known bugs at this time
 
 ## How to Run the Build
 **Simply Play online:** insert itchio link
@@ -54,17 +57,16 @@ populate once known
 * Ctrl+Shift+B to build and run (will launch via WebGL so make sure its installed. Will open in browser)
 Note that this build is entirely on the '3d' branch of the assignment 2 repository as opposed to a unique GitHub repository for assignment 3 specifically.
 
-## Key Programming Systems
-1. **Zombie Spawning System** – fill out if relevent
-2. **Bullets** (`Bullet.cs`) — fill out if relevent
-3. **Pickups** (`x` and `y`) — fill out if relevent
-4. **Items** – fill out if relevent
-5. **Structures** – these are non-essential locations and are copy pasted around the map to hold pickups like health and ammo and make the map more interesting
-6. **Material Properties** (`SurfaceZone3D.cs`) – Ground materials with specific properties (namely Mud and Ice) are controlled with this specific class that handles the alteration of player movement according to the surface (e.g., sliding on ice, slowing down in mud)
+## Key Reusable Programming Systems
+1. **Bullets** (`Bullet.cs`) — A single bullet prefab object is replicated and shot out when the user clicks and this prefab gets reused each bullet. 
+2. **Items** (`Health` prefab,`Ammo` prefab) — These two single assets are reused throughout structures.
+3. **Pickups** (`WalkoverPickup.cs`, `ItemOfInterestPickup`, `ItemFloat.cs`) — These scripts are replicated across pickups like Health and Ammo prefabs and encapsulate the 'pickup' functionality, the items idle animation, etc.
+4. **Structures** – these are non-essential locations and are copy pasted around the map to hold pickups like health and ammo and make the map more interesting
+5. **Material Properties** (`SurfaceZone3D.cs`) – Ground materials with specific properties (namely Mud and Ice) are controlled with this specific class that handles the alteration of player movement according to the surface (e.g., sliding on ice, slowing down in mud)
 
 ## Team Contributions
 | Team Member | Contribution |
 |---|---|
-| M.F. (student id: 105923445) | fill out as needed |
-| Vihanga Gunasekara | fill out as needed |
+| M.F. (student id: 105923445) | world design, original asset creation (newspapers, maps, ice, etc), various physics surfaces, data driven system, progression game content (keycode,dynamite,boulders,etc), FOI creation, README, accessibility settings (sensitivity,volume) |
+| Vihanga Gunasekara | pickup items (ammo,health,dynamite redesign), zombie spawner and navmesh, player movement, 3 optimisations, combat functionality (weapon, shooting, zombie, damage, health, etc), notebook UI design and popups |
 | Ethan Gibbons | Absolutely nothing - has not even made contact with the team at any point and contributed 0% to both assignments |
