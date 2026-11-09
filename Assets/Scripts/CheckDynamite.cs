@@ -8,7 +8,7 @@ public class CheckDynamite : MonoBehaviour
     {
         if (!collision.CompareTag("Player")) return;
 
-        if (GameManager.Instance.PlayerDynamiteCount >= requiredDynamite)
+        if (NotebookCollection.Instance.DynamiteCount >= requiredDynamite)
         {
             popupUI.ShowPopup("You escaped the city! Proceed!");
             transform.parent.gameObject.SetActive(false);

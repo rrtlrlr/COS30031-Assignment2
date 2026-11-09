@@ -4095,7 +4095,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de6c2f3095b35e4eab4b0933acc033a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectDynamite
-  popupUI: {fileID: 0}
 --- !u!1 &98540323
 GameObject:
   m_ObjectHideFlags: 0
@@ -13365,7 +13364,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de6c2f3095b35e4eab4b0933acc033a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectDynamite
-  popupUI: {fileID: 0}
 --- !u!1 &345580055
 GameObject:
   m_ObjectHideFlags: 0
@@ -19316,7 +19314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de6c2f3095b35e4eab4b0933acc033a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectDynamite
-  popupUI: {fileID: 0}
 --- !u!65 &469659253
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62679,17 +62676,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2443479015817373452, guid: be1cfcd79a899524b8fa51a0c14aaf3d, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695329523074836169, guid: be1cfcd79a899524b8fa51a0c14aaf3d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2185677
+      objectReference: {fileID: 0}
     - target: {fileID: 3695329523074836169, guid: be1cfcd79a899524b8fa51a0c14aaf3d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -285.92
       objectReference: {fileID: 0}
     - target: {fileID: 3695329523074836169, guid: be1cfcd79a899524b8fa51a0c14aaf3d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.48
+      value: 3.7316
       objectReference: {fileID: 0}
     - target: {fileID: 3695329523074836169, guid: be1cfcd79a899524b8fa51a0c14aaf3d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 318.96
       objectReference: {fileID: 0}
     - target: {fileID: 3695329523074836169, guid: be1cfcd79a899524b8fa51a0c14aaf3d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -62723,6 +62728,10 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1337837788122851877}
+    - target: {fileID: 7688395327364414022, guid: be1cfcd79a899524b8fa51a0c14aaf3d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.77
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -88095,7 +88104,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6359856383883856523}
   m_HandleRect: {fileID: 5214838317055156095}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -90220,7 +90229,7 @@ Transform:
   m_GameObject: {fileID: 4153592720179189589}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.48, z: 0}
+  m_LocalPosition: {x: -285.92, y: 4.669897, z: 318.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -91244,7 +91253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810b1699fa51a4d4492b69c35e7c57ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamitePickup
-  dynamiteData: {fileID: 0}
+  dynamiteData: {fileID: 11400000, guid: 05c71f2b47ea1824792c1700e5036237, type: 2}
 --- !u!23 &1844703243720529923
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -93461,7 +93470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810b1699fa51a4d4492b69c35e7c57ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamitePickup
-  dynamiteData: {fileID: 0}
+  dynamiteData: {fileID: 11400000, guid: 05c71f2b47ea1824792c1700e5036237, type: 2}
 --- !u!1 &2705120594394411977
 GameObject:
   m_ObjectHideFlags: 0
@@ -93594,7 +93603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2835036004298751159
 GameObject:
   m_ObjectHideFlags: 0
@@ -107798,7 +107807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810b1699fa51a4d4492b69c35e7c57ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DynamitePickup
-  dynamiteData: {fileID: 0}
+  dynamiteData: {fileID: 11400000, guid: 05c71f2b47ea1824792c1700e5036237, type: 2}
 --- !u!114 &8991285721715627244
 MonoBehaviour:
   m_ObjectHideFlags: 0
