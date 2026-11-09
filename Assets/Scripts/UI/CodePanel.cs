@@ -1,9 +1,9 @@
 using TMPro;
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class CodePanel : MonoBehaviour
 {
+    public SectionScore section2Config;
     public GameObject panel;
     public TMP_InputField inputField;
     public DisplayPopup popup;
@@ -33,7 +33,9 @@ public class CodePanel : MonoBehaviour
         if (_currentDoor.TryCode(inputField.text))
         {
             Close();
-            popup.ShowPopup("Section 3 unlocked!");
+            GameManager.Instance.EndSection2();
+            float time = GameManager.Instance.Section2Time;
+            popup.ShowPopup($"Section 3 unlocked! Took {time:F2}s. {section2Config.GetStarMessage(time)}");
         }
         else
         {
