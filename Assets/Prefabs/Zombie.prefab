@@ -689,7 +689,8 @@ MonoBehaviour:
   playerHealth: {fileID: 0}
   animator: {fileID: 2306718411913411122}
   detectionRange: 50
-  attackRange: 1.5
+  attackRange: 3
+  detectionInterval: 0.25
   movementSpeed: 6
   attackDamage: 15
   attackCooldown: 1.5
