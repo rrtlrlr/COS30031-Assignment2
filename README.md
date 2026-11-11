@@ -11,7 +11,7 @@ Note that the 3d branch of the COS30031-Assignment2 repository has been used for
 
 **Unit:** COS30031 – Games Programming | Assessment 3
 
-**Video:** insert yt link
+**Video:** https://www.youtube.com/watch?v=7zw1OXlzQNo
 
 ---
 
